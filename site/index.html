@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<title>Raakpunt: Waar scherpte, verbinding en vertrouwen elkaar raken.</title>
+<style>
+  :root{
+    --ink:#161d13;
+    --ink-soft:#232b1c;
+    --sage:#7B8C5A;
+    --sage-deep:#4D5A2E;
+    --sage-pale:#C8D1A8;
+    --cream:#F5F1E6;
+    --cream-deep:#EAE3D1;
+    --blue:#3E5A66;
+    --blue-deep:#28414B;
+    --blue-pale:#9CC0CC;
+    --amber:#C08A2E;
+    --amber-deep:#7A4A00;
+    --amber-pale:#EBC98A;
+    --ink-text:#20261A;
+    --paper-text:#3A3F30;
+    --font-display:"Playfair Display", "Iowan Old Style", Georgia, serif;
+    --font-body:"Inter", "Segoe UI", system-ui, sans-serif;
+    --font-mono:"IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink-text);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding-inline:32px;
+  }
+  @media (max-width:640px){ .wrap{padding-inline:20px;} }
+
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;margin:0;text-wrap:balance;line-height:1.15;}
+  em{font-style:italic;}
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1.5px solid currentColor;
+    cursor:pointer;
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--sage-pale);color:var(--ink);border-color:var(--sage-pale);}
+  .btn-primary:hover{background:var(--cream);}
+  .btn-ghost{background:transparent;color:inherit;}
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);}
+  .btn-dark{border-color:var(--ink);color:var(--ink);}
+  .btn-dark:hover{background:var(--ink);color:var(--cream);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,241,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--cream-deep);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:0.01em;text-decoration:none;color:var(--ink);}
+  .brand svg{width:38px;height:auto;flex:none;}
+  .navlinks{display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500;}
+  .navlinks a{text-decoration:none;opacity:0.8;}
+  .navlinks a:hover{opacity:1;}
+  .navlinks-list{display:flex;align-items:center;gap:30px;}
+  .navlinks-cta-mobile{display:none;}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;background:none;border:none;cursor:pointer;padding:8px;}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--ink);border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width:820px){
+    .nav-toggle{display:flex;}
+    .navlinks-cta-desktop{display:none;}
+    .navlinks-list{
+      display:none;
+      position:fixed;top:70px;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--cream);border-bottom:1px solid var(--cream-deep);
+      padding:8px 24px 20px;
+      box-shadow:0 12px 24px rgba(0,0,0,.08);
+      z-index:49;
+    }
+    .navlinks-list.open{display:flex;}
+    .navlinks-list a{padding:14px 0;border-bottom:1px solid rgba(32,38,26,0.08);}
+    .navlinks-cta-mobile{display:inline-block;margin-top:8px;text-align:center;}
+  }
+
+  /* ---------- HERO (homepage) ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:center;
+    padding-block:88px 76px;
+    position:relative;
+    z-index:2;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;padding-block:56px 40px;gap:8px;}
+  }
+  .hero-eyebrow{color:var(--sage-pale);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+  .hero-eyebrow .rule{width:34px;height:1px;background:var(--sage-pale);display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.6rem, 5.4vw, 4.2rem);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{color:var(--sage-pale);font-weight:600;}
+  .hero p.lead{
+    margin-top:26px;
+    max-width:46ch;
+    font-size:18px;
+    color:#DCE3D1;
+    line-height:1.65;
+  }
+  .hero .ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+
+  .venn-wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:380px;
+  }
+  .venn-wrap svg{width:min(100%,480px);height:auto;}
+  .venn-circle{mix-blend-mode:screen;}
+  .venn-orbit{transform-box:view-box;transform-origin:240px 222px;}
+  @media (prefers-reduced-motion:no-preference){
+    .venn-orbit{animation:orbit 12s ease-in-out infinite;}
+  }
+  @keyframes orbit{
+    0%,100%{transform:rotate(-10deg) scale(1);}
+    50%{transform:rotate(10deg) scale(1.04);}
+  }
+  .hero-bg-texture{
+    position:absolute;inset:0;
+    background-image:radial-gradient(circle at 15% 110%, rgba(200,209,168,0.10), transparent 55%);
+    z-index:1;
+  }
+
+  /* ---------- DIENST-PAGE HERO (single panel) ---------- */
+  .dienst-hero{position:relative;overflow:hidden;}
+  .dienst-hero.blue{background:linear-gradient(160deg,var(--blue) 0%, var(--blue-deep) 100%);color:var(--cream);}
+  .dienst-hero.amber{background:linear-gradient(160deg,var(--amber) 0%, var(--amber-deep) 100%);color:var(--cream);}
+  .dienst-hero.sage{background:linear-gradient(160deg,var(--sage) 0%, var(--sage-deep) 100%);color:var(--cream);}
+  .dienst-hero-inner{padding-block:96px 78px;max-width:740px;position:relative;z-index:2;}
+  .dienst-hero .num{font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.16em;opacity:0.85;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+  .dienst-hero .num .rule{width:34px;height:1px;background:currentColor;display:inline-block;opacity:0.65;}
+  .dienst-hero h1{font-size:clamp(2.2rem,4.6vw,3.3rem);line-height:1.08;color:#fff;}
+  .dienst-hero p.lead{margin-top:24px;font-size:18px;line-height:1.65;color:rgba(255,255,255,0.92);max-width:62ch;}
+  .dienst-hero .ctas{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{padding-block:96px;}
+  @media (max-width:640px){ section{padding-block:64px;} }
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head .eyebrow{color:var(--sage-deep);margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .light-section{background:var(--cream);}
+  .dark-section{background:var(--ink);color:var(--cream);}
+  .dark-section .section-head .eyebrow{color:var(--sage-pale);}
+
+  /* ---------- DIENSTEN (asymmetric, homepage) ---------- */
+  .diensten-stage{
+    position:relative;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+  }
+  @media (max-width:880px){ .diensten-stage{grid-template-columns:1fr;} }
+
+  .dienst-panel{
+    position:relative;
+    padding:52px 44px;
+    color:var(--cream);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .dienst-panel.blue{background:linear-gradient(160deg,var(--blue) 0%, var(--blue-deep) 100%);}
+  .dienst-panel.amber{background:linear-gradient(160deg,var(--amber) 0%, var(--amber-deep) 100%);}
+  .dienst-panel .num{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;opacity:0.75;}
+  .dienst-panel h3{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;line-height:1.05;}
+  .dienst-panel .tag{font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;}
+  .dienst-panel p{max-width:44ch;color:rgba(255,255,255,0.92);}
+  .dienst-panel .more{margin-top:auto;font-weight:600;font-size:14.5px;text-decoration:none;display:inline-flex;gap:8px;align-items:center;color:#fff;}
+  .dienst-panel .more:hover{text-decoration:underline;}
+
+  .seam{
+    grid-column:1 / -1;
+    background:var(--ink);
+    color:var(--cream);
+    text-align:center;
+    padding:34px 24px;
+    position:relative;
+  }
+  .seam p{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(1.05rem,2.1vw,1.4rem);
+    max-width:56ch;
+    margin:0 auto;
+    color:var(--sage-pale);
+  }
+
+  .dienst-minor{
+    grid-column:1 / -1;
+    background:var(--cream-deep);
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:24px;
+    padding:28px 40px;
+  }
+  @media (max-width:700px){
+    .dienst-minor{grid-template-columns:1fr;text-align:left;gap:10px;padding:26px 28px;}
+  }
+  .dienst-minor .num{font-family:var(--font-mono);font-size:12px;color:var(--sage-deep);letter-spacing:0.1em;}
+  .dienst-minor h4{font-family:var(--font-display);font-size:1.4rem;color:var(--sage-deep);margin:2px 0 4px;}
+  .dienst-minor .tag{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper-text);opacity:0.7;}
+  .dienst-minor p{margin:0;color:var(--paper-text);max-width:52ch;font-size:15px;}
+  .dienst-minor .more{font-weight:600;font-size:14px;color:var(--sage-deep);text-decoration:none;white-space:nowrap;}
+  .dienst-minor .more:hover{text-decoration:underline;}
+
+  /* ---------- OVER DAAN ---------- */
+  .over-daan-grid{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width:880px){ .over-daan-grid{grid-template-columns:1fr;} }
+  .photo-frame{
+    position:relative;
+    border:2px solid var(--sage-deep);
+    padding:14px;
+  }
+  .photo-frame img{width:100%;height:auto;filter:saturate(0.92) contrast(1.02);}
+  .photo-caption{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.08em;color:var(--sage-deep);margin-top:12px;text-transform:uppercase;}
+
+  .over-daan-text p{max-width:62ch;color:var(--paper-text);margin:0 0 20px;}
+  .pull-quote{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(1.3rem,2.6vw,1.7rem);
+    color:var(--sage-deep);
+    border-left:3px solid var(--sage);
+    padding-left:24px;
+    margin:36px 0;
+    line-height:1.4;
+  }
+  .tagcloud{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 30px;}
+  .tagcloud span{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.03em;
+    padding:7px 13px;
+    border:1px solid var(--sage-deep);
+    color:var(--sage-deep);
+  }
+
+  /* ---------- FEATURE TAGS (dienst pages, "wat het inhoudt") ---------- */
+  .feature-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .feature-tags span{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.03em;
+    padding:7px 13px;
+    border:1px solid;
+  }
+  .feature-tags.blue span{border-color:var(--blue-deep);color:var(--blue-deep);}
+  .feature-tags.amber span{border-color:var(--amber-deep);color:var(--amber-deep);}
+  .feature-tags.sage span{border-color:var(--sage-deep);color:var(--sage-deep);}
+
+  /* ---------- WERKWIJZE ---------- */
+  .werkwijze-list{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:rgba(245,241,230,0.14);
+    border-top:1px solid rgba(245,241,230,0.14);
+  }
+  @media (max-width:880px){ .werkwijze-list{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .werkwijze-list{grid-template-columns:1fr;} }
+  .werkwijze-step{
+    background:var(--ink);
+    padding:34px 28px;
+  }
+  .werkwijze-step .num{font-family:var(--font-mono);font-size:13px;color:var(--sage-pale);letter-spacing:0.1em;}
+  .werkwijze-step h4{font-family:var(--font-display);font-size:1.3rem;margin:14px 0 10px;color:var(--cream);}
+  .werkwijze-step p{margin:0;color:#C9D0BC;font-size:14.5px;}
+
+  /* ---------- VOOR WIE ---------- */
+  .voorwie-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:rgba(32,38,26,0.08);
+  }
+  @media (max-width:700px){ .voorwie-list{grid-template-columns:1fr;} }
+  .voorwie-list.cols-3{grid-template-columns:1fr 1fr 1fr;}
+  @media (max-width:900px){ .voorwie-list.cols-3{grid-template-columns:1fr;} }
+  .voorwie-item{
+    background:var(--cream-deep);
+    padding:32px 34px;
+    border-left:3px solid var(--sage);
+  }
+  .voorwie-item.blue{border-color:var(--blue);}
+  .voorwie-item.amber{border-color:var(--amber);}
+  .voorwie-item.sage{border-color:var(--sage);}
+  .voorwie-item h4{font-family:var(--font-display);font-size:1.25rem;margin-bottom:10px;color:var(--ink);}
+  .voorwie-item p{margin:0;color:var(--paper-text);font-size:15px;max-width:44ch;}
+
+  /* ---------- CTA BAND (dienst pages, closing) ---------- */
+  .cta-band{background:var(--ink);color:var(--cream);text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.8rem,3.4vw,2.5rem);}
+  .cta-band p{max-width:52ch;margin:18px auto 0;color:#DCE3D1;font-size:17px;}
+  .cta-band .ctas{margin-top:30px;display:flex;justify-content:center;}
+
+  /* ---------- CONTACT (homepage) ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+  }
+  @media (max-width:880px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-grid h2{color:var(--cream);font-size:clamp(1.9rem,3.6vw,2.7rem);}
+  .contact-lead{max-width:46ch;color:#DCE3D1;margin-top:18px;font-size:17px;}
+  .contact-info{display:flex;flex-direction:column;gap:22px;margin-top:38px;}
+  .contact-item .eyebrow{color:var(--sage-pale);margin-bottom:6px;}
+  .contact-item div.val{font-size:16px;}
+  .contact-item a{text-decoration:none;border-bottom:1px solid var(--sage-pale);}
+
+  /* ---------- CONTACT FORM ---------- */
+  .contact-form{background:var(--cream-deep);padding:40px;color:var(--ink-text);}
+  .form-title{font-family:var(--font-display);font-size:1.4rem;margin-bottom:22px;color:var(--ink);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:560px){ .form-row{grid-template-columns:1fr;} }
+  .form-group{margin-bottom:18px;}
+  .form-group label{display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:7px;}
+  .form-group input,.form-group select,.form-group textarea{
+    width:100%;padding:12px 14px;font-family:var(--font-body);font-size:15px;
+    border:1.5px solid rgba(32,38,26,0.25);background:var(--cream);color:var(--ink-text);
+  }
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--sage-deep);}
+  .form-group textarea{min-height:110px;resize:vertical;font-family:var(--font-body);}
+  .btn-submit{
+    width:100%;padding:15px;font-family:var(--font-body);font-weight:600;font-size:15.5px;
+    background:var(--ink);color:var(--cream);border:none;cursor:pointer;transition:background .2s ease;
+  }
+  .btn-submit:hover{background:var(--sage-deep);}
+  .form-note{font-size:12px;color:var(--paper-text);opacity:0.8;margin-top:12px;text-align:center;}
+
+  footer{
+    background:var(--ink);
+    color:#9EA891;
+    border-top:1px solid rgba(245,241,230,0.14);
+    padding-block:28px;
+    font-size:13.5px;
+  }
+  .footer-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+  .footer-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .footer-links a{text-decoration:none;opacity:0.85;}
+  .footer-links a:hover{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 600 460" aria-hidden="true">
+        <g opacity="0.85">
+          <circle cx="240" cy="230" r="110" fill="#7B8C5A" opacity="0.55"/>
+          <circle cx="360" cy="230" r="110" fill="#4D5A2E" opacity="0.55"/>
+          <circle cx="300" cy="330" r="110" fill="#C8D1A8" opacity="0.7"/>
+        </g>
+        <circle cx="300" cy="268" r="17" fill="#33401D"/>
+      </svg>
+      Raakpunt
+    </a>
+    <nav class="navlinks">
+      <div class="navlinks-list">
+        <a href="index.html#diensten">Diensten</a>
+        <a href="index.html#over-daan">Over Daan</a>
+        <a href="index.html#werkwijze">Werkwijze</a>
+        <a class="btn btn-dark navlinks-cta-mobile" href="index.html#contact">Neem contact op</a>
+      </div>
+      <a class="btn btn-dark navlinks-cta-desktop" href="index.html#contact" style="padding:10px 20px;font-size:14px;">Neem contact op</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg-texture"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow eyebrow"><span class="rule"></span>RAAKPUNT · SCHERPTE · VERBINDING · VERTROUWEN</div>
+      <h1>Scherp analyseren.<br><em>Mensen zien.</em><br>Vertrouwen geven.</h1>
+      <p class="lead">Twintig jaar in het bankwezen, vijftien daarvan bij ABN AMRO, leerden me enorm veel, waaronder: cijfers en risico's scherp analyseren, en tegelijkertijd ook oog houden voor de mensen erachter. Die scherpte en verbinding zijn waardevolle skills die ik binnen Raakpunt graag inzet bij interim organisatieadvies opdrachten. Dit kan gaan om tijdelijk een verbindende en resultaatgerichte Teamlead of Peoplecoach of juist hulp bij het schrijven van een belangrijke aanbesteding. Daarnaast komen mijn empathische kwaliteiten en mijn kwaliteiten om echt in contact te komen met mensen goed van pas in mijn werk als extern vertrouwenspersoon. Eén persoon, verschillende complementaire kwaliteiten met dezelfde overtuiging: waar scherpte, verbinding en vertrouwen elkaar raken.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#diensten">Ontdek de praktijken</a>
+        <a class="btn btn-ghost" href="#over-daan" style="color:var(--cream);">Over Daan</a>
+      </div>
+    </div>
+    <div class="venn-wrap">
+      <svg viewBox="0 0 480 480" aria-labelledby="venn-title" role="img">
+        <title id="venn-title">Drie overlappende cirkels die om het raakpunt heen bewegen</title>
+        <g class="venn-orbit">
+          <circle class="venn-circle venn-c1" cx="188" cy="190" r="140" fill="#6E93A6"/>
+          <circle class="venn-circle venn-c2" cx="292" cy="190" r="140" fill="#E0AE55"/>
+          <circle class="venn-circle venn-c3" cx="240" cy="288" r="140" fill="#9BAE72"/>
+        </g>
+        <circle cx="240" cy="222" r="5" fill="#F5F1E6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="light-section" id="diensten">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Drie namen, één raakpunt</div>
+      <h2>Waar het samenkomt, wordt het scherper.</h2>
+    </div>
+  </div>
+  <div class="diensten-stage">
+    <div class="dienst-panel blue">
+      <div class="num">01 · ORGANISATIEADVIES &amp; TENDERSCHRIJVEN</div>
+      <h3>Van Wens tot Winst</h3>
+      <p>Organisatieadvies is waar ik corporate ervaring en scherpte het hardst laat werken. Bij een belangrijke aanbesteding schrijf ik de teksten die het verschil maken en aansluiten bij de wensen van de aanbestedende dienst. Bij een verandertraject of een tijdelijke overbrugging stap ik in als interimmanager of adviseur, en breng ik diezelfde ervaring en scherpte mee naar de organisatie zelf. Beide voorbeelden bestaan uit dezelfde facetten: een situatie doorgronden, en daar een overtuigend verhaal of een overtuigende aanpak tegenover zetten.</p>
+      <a class="more" href="dienst-organisatieadvies.html">Meer over organisatieadvies →</a>
+    </div>
+    <div class="dienst-panel amber">
+      <div class="num">02 · EXTERN VERTROUWENSPERSOON</div>
+      <h3>Zonder Oordeel</h3>
+      <p>Een van de meest gegeven feedback vanuit mijn omgeving is altijd geweest dat men zich gehoord en gezien voelt wanneer ik met hen spreek. Zeker wanneer het gaat om gevoelige onderwerpen als grensoverschrijdend gedrag of integriteitskwesties is het van groot belang dat men hun verhaal in vertrouwen kwijt kan en daarbij iemand spreekt die kan bijstaan in het kiezen van de juiste volgende stap. Ik ben een onafhankelijke, gecertificeerde vertrouwenspersoon voor uw organisatie, bereikbaar voor iedere medewerker en uiteraard gebonden aan absolute geheimhouding. Met de aankomende wettelijke verplichting uit artikel 13a van de Arbowet, waarbij ieder bedrijf met meer dan 10 FTE een vertrouwenspersoon moet hebben voor haar personeel wordt dit voor steeds meer werkgevers een actueel punt op de agenda.</p>
+      <a class="more" href="dienst-vertrouwenspersoon.html">Meer over vertrouwenspersoon →</a>
+    </div>
+    <div class="seam">
+      <p>Scherpte, verbinding en vertrouwen: overal hetzelfde fundament, telkens een andere vorm.</p>
+    </div>
+    <div class="dienst-minor">
+      <div>
+        <div class="num">03 · COACHING &amp; TRAINING</div>
+        <h4>Hard op Zacht</h4>
+        <div class="tag">Niet de hoofdfocus, wel onderdeel van Raakpunt</div>
+      </div>
+      <p>Daarnaast train en coach ik op individueel of teamverband op maat, met een focus op sociale veiligheid en moeilijke gesprekken. Voor meer informatie, neem contact met me op.</p>
+      <a class="more" href="dienst-coaching-en-training.html" style="color:var(--sage-deep);">Meer over coaching →</a>
+    </div>
+  </div>
+</section>
+
+<section class="light-section" id="over-daan" style="background:var(--cream-deep);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Over Daan</div>
+      <h2>Twee kanten, één naam</h2>
+    </div>
+    <div class="over-daan-grid">
+      <div>
+        <div class="photo-frame">
+          <img src="daan-kamerbeek.jpg" alt="Portret van Daan Kamerbeek" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+        </div>
+        <div class="photo-caption">Daan Kamerbeek, Raakpunt</div>
+      </div>
+      <div class="over-daan-text">
+        <p>Twintig jaar binnen het bankwezen leerden me twee dingen tegelijk. Als relatiemanager, kredietanalist, Scrum Master en later manager en consultant doorgrondde ik voortdurend situaties: cijfers, risico's, vastgelopen processen. Tegelijk kwam er in vrijwel elke evaluatie en elk feedbackmoment een andere kant naar boven, verbinding maken, luisteren, rust brengen in een team dat net was gegroeid van vrijwel niets naar 44 mensen. Beide kanten vormen samen de reden dat mijn bedrijf Raakpunt heet: de plek waar scherpte en verbinding elkaar nodig hebben, niet als toevallige metafoor maar als vertaling van wat mijn omgeving en ikzelf, onafhankelijk van elkaar, in mij herkenden.</p>
+        <p>Na ruim 25 jaar in loondienst koos ik ervoor om zelf te bepalen waar mijn tijd en aandacht naartoe gaan, en met wie. Dat merk je in hoe ik werk: direct bereikbaar, makkelijk benaderbaar, en het liefst bij opdrachtgevers en organisaties waar de klik er ook persoonlijk is. Zoals ik er naar kijk wordt het werk daar beter en leuker van.</p>
+        <p>Dat mensen met een vraag of een persoonlijk verhaal naar me toe komen is niets nieuws, dat gebeurde al lang voordat ik zelfstandig werd. Vrienden, collega's, bijna iedereen die me een tijdje kent weet me op enig moment te vinden met een dilemma, een lastige situatie, of gewoon om even mee te denken. Raakpunt is de vorm waarin ik daar nu ook voor word ingehuurd, met dezelfde nieuwsgierigheid en scherpte die ik altijd al gehad heb. Of dit nu is tijdens een bila met een medewerker, het schrijven van een tender of het voeren van een gesprek met een medewerker die last heeft van grensoverschrijdend gedrag.</p>
+        <div class="pull-quote">"Je brengt rust en ruimte in contact met mensen, waardoor ze zich vrij voelen te spreken."</div>
+        <div class="tagcloud">
+          <span>Ruimte creëren waardoor mensen zich vrij voelen te spreken</span>
+          <span>Snel vertrouwen wekken bij uiteenlopende mensen</span>
+          <span>Doorgronden van complexe situaties en structuur aanbrengen in complexiteit</span>
+          <span>Creatief schrijven en herformuleren, met een scherpe pen</span>
+          <span>Out of the box denken en doortastend handelen zodra de koers helder is</span>
+          <span>Opbouwend kritisch, eerlijk en direct</span>
+        </div>
+        <a class="btn btn-dark" href="CV_Daan_Kamerbeek_2026.pdf" download="CV_Daan_Kamerbeek_2026.pdf">Download CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section" id="werkwijze">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hoe ik werk</div>
+      <h2>Van eerste gesprek tot resultaat</h2>
+    </div>
+  </div>
+  <div class="werkwijze-list">
+    <div class="werkwijze-step">
+      <div class="num">01</div>
+      <h4>Kennismaking</h4>
+      <p>Een vrijblijvend gesprek om te bepalen of er een goede match is en wat de vraag achter de vraag is.</p>
+    </div>
+    <div class="werkwijze-step">
+      <div class="num">02</div>
+      <h4>Voorstel</h4>
+      <p>Een heldere offerte met scope, aanpak en tijdsplanning: vooraf weet u precies waar u aan toe bent.</p>
+    </div>
+    <div class="werkwijze-step">
+      <div class="num">03</div>
+      <h4>Uitvoering</h4>
+      <p>Grondig, betrokken en met oog voor de mensen achter de opdracht. Regelmatige afstemming.</p>
+    </div>
+    <div class="werkwijze-step">
+      <div class="num">04</div>
+      <h4>Resultaat</h4>
+      <p>Concrete resultaten, een evaluatie, en de mogelijkheid tot doorlopende samenwerking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section" id="contact" style="background:var(--ink-soft);">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Een eerste gesprek is altijd vrijblijvend</h2>
+      <p class="contact-lead">Nieuwsgierig of er een match is? Stuur een bericht of mail direct. Ik reageer binnen één werkdag.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="eyebrow">E-mail</div>
+          <div class="val"><a href="mailto:daan@raakpunt.com">daan@raakpunt.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="eyebrow">Beschikbaarheid</div>
+          <div class="val">Landelijk beschikbaar, remote-vriendelijk</div>
+        </div>
+        <div class="contact-item">
+          <div class="eyebrow">LinkedIn</div>
+          <div class="val"><a href="https://www.linkedin.com/in/daankamerbeek" target="_blank" rel="noopener">linkedin.com/in/daankamerbeek</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="eyebrow">KvK</div>
+          <div class="val">42094116</div>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-title">Stuur een bericht</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-voornaam">Voornaam</label>
+          <input type="text" id="f-voornaam" name="voornaam" placeholder="Jan" required>
+        </div>
+        <div class="form-group">
+          <label for="f-achternaam">Achternaam</label>
+          <input type="text" id="f-achternaam" name="achternaam" placeholder="de Vries" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="f-email">E-mailadres</label>
+        <input type="email" id="f-email" name="email" placeholder="jan@bedrijf.nl" required>
+      </div>
+      <div class="form-group">
+        <label for="f-organisatie">Organisatie</label>
+        <input type="text" id="f-organisatie" name="organisatie" placeholder="Naam van uw organisatie">
+      </div>
+      <div class="form-group">
+        <label for="f-dienst">Ik ben geïnteresseerd in</label>
+        <select id="f-dienst" name="dienst">
+          <option value="">Selecteer een dienst</option>
+          <option>Tenderschrijf en -management</option>
+          <option>Interim Management</option>
+          <option>Bedrijfsadvies</option>
+          <option>Extern Vertrouwenspersoon</option>
+          <option>Coaching &amp; Training</option>
+          <option>Meer informatie / kennismaking</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="f-bericht">Bericht</label>
+        <textarea id="f-bericht" name="bericht" placeholder="Beschrijf kort uw vraag of situatie..." required></textarea>
+      </div>
+      <button class="btn-submit" type="submit">Verstuur bericht →</button>
+      <p class="form-note">Dit opent uw eigen e-mailprogramma met het bericht al ingevuld, verzonden wordt er pas als u dat zelf bevestigt. Uw gegevens worden uitsluitend gebruikt om op uw bericht te reageren.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>© Raakpunt, Daan Kamerbeek</div>
+    <div class="footer-links">
+      <a href="index.html#diensten">Diensten</a>
+      <a href="index.html#over-daan">Over Daan</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="Raakpunt_Algemene_Voorwaarden_v1_1.pdf" download="Raakpunt_Algemene_Voorwaarden_v1_1.pdf">Algemene Voorwaarden</a>
+      <a href="Kamerbeek_Privacyverklaring_v1.pdf" download="Kamerbeek_Privacyverklaring_v1.pdf">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    function v(name){ return (form.elements[name] && form.elements[name].value || '').trim(); }
+    var voornaam = v('voornaam'), achternaam = v('achternaam'), email = v('email');
+    var organisatie = v('organisatie'), dienst = v('dienst'), bericht = v('bericht');
+    var subject = 'Contactformulier website' + (dienst ? ' (' + dienst + ')' : '');
+    var bodyLines = [
+      'Naam: ' + voornaam + ' ' + achternaam,
+      'E-mail: ' + email,
+      organisatie ? 'Organisatie: ' + organisatie : null,
+      dienst ? 'Interesse: ' + dienst : null,
+      '',
+      bericht
+    ].filter(Boolean);
+    var mailto = 'mailto:daan@raakpunt.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = mailto;
+  });
+})();
+</script>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.navlinks-list');
+  if(!t||!l)return;
+  function close(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+  l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
+</body>
+</html>
