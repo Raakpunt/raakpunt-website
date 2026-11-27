@@ -23,6 +23,12 @@ Op `main` komt niets rechtstreeks; die tak kan alleen via een pull request veran
 - Nooit VP-dossiers, casussen of namen van melders in deze repository. Deze repository is openbaar.
 - Op de server staat `.ftp-deploy-sync-state.json`. Dat bestand niet verwijderen; de upload houdt daarmee bij wat er al staat.
 
+## Kennisbank vertrouwenswerk
+
+- `site/kennisbank-vertrouwenswerk.html` staat op https://www.raakpunt.com/kennisbank-vertrouwenswerk.html. De ingang is de dienstpagina extern vertrouwenspersoon (sectie "Wat het inhoudt"); de pagina staat bewust niet in het hoofdmenu.
+- Het bestand wordt gemaakt en bijgehouden in het project "Ik als vertrouwenspersoon". Pas de inhoud hier niet aan: bij een update wordt het in zijn geheel vervangen onder dezelfde naam.
+- Bijwerken: na een mail "ACTIE WEBSITE" het nieuwe bestand ongewijzigd over het oude zetten, als pull request met de boodschap "Kennisbank vertrouwenswerk bijgewerkt <datum>".
+
 ## Toegang
 
 De FTP-gegevens staan alleen in de geheimen van deze repository (Settings, Secrets and variables, Actions): `FTP_SERVER`, `FTP_USERNAME` en `FTP_PASSWORD`.

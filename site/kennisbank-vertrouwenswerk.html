@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kennisbank vertrouwenswerk</title>
+<meta name="description" content="Kennisbank vertrouwenswerk van Raakpunt: wet- en regelgeving over ongewenst gedrag, melden, vertrouwelijkheid en de vertrouwenspersoon, per onderwerp gecontroleerd tegen de officiële bron.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: amber band met zoekbalk, daarna rubriekenkolom links en kaarten rechts; op de telefoon alles onder elkaar. Huisstijl Raakpunt. */
+:root{
+--bg:#F5F1E6;--card:#EAE3D1;--panel:#E2DAC4;--ink:#161d13;--text:#3A3F30;--muted:#5b604e;
+--sage:#7B8C5A;--sagedeep:#4D5A2E;--amber:#C08A2E;--amberdeep:#7A4A00;--amberink:#7A4A00;--amberpale:#EBC98A;
+--line:rgba(32,38,26,.14);--headbg:rgba(245,241,230,.94);--cream:#F5F1E6;--onhero:#ffffff;--footbg:#161d13;--foottext:#9EA891;
+--fd:"Playfair Display","Iowan Old Style",Georgia,serif;--fb:"Inter","Segoe UI",system-ui,sans-serif;--fm:"IBM Plex Mono","SFMono-Regular",Consolas,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+--bg:#161d13;--card:#1f2719;--panel:#232b1c;--ink:#F5F1E6;--text:#DCE3D1;--muted:#A9B09C;--sagedeep:#C8D1A8;--amberink:#EBC98A;--amberpale:#4a3a1c;
+--line:rgba(245,241,230,.14);--headbg:rgba(22,29,19,.94);--footbg:#10160d;color-scheme:dark}}
+:root[data-theme="dark"]{
+--bg:#161d13;--card:#1f2719;--panel:#232b1c;--ink:#F5F1E6;--text:#DCE3D1;--muted:#A9B09C;--sagedeep:#C8D1A8;--amberink:#EBC98A;--amberpale:#4a3a1c;
+--line:rgba(245,241,230,.14);--headbg:rgba(22,29,19,.94);--footbg:#10160d;color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--fb);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--headbg)}
+h1,h2,h3{font-family:var(--fd);font-weight:700;margin:0;line-height:1.15;text-wrap:balance;color:var(--ink)}
+a{color:var(--amberink)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:700px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.eyebrow{font-family:var(--fm);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px}
+.eyebrow .rule{width:34px;height:1px;background:currentColor;opacity:.65;flex:none}
+input:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--headbg);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:38px;height:auto;flex:none}
+.brand small{font-family:var(--fb);font-weight:500;font-size:13.5px;color:var(--muted);border-left:1px solid var(--line);padding-left:10px}
+.navlink{font:600 14.5px var(--fb);color:var(--ink);text-decoration:none;border:1.5px solid currentColor;padding:9px 18px;min-height:44px;display:inline-flex;align-items:center}
+.hero{background:linear-gradient(160deg,var(--amber) 0%,var(--amberdeep) 100%);color:var(--onhero)}
+.hero .wrap{padding-block:64px 48px}
+.hero .eyebrow{opacity:.85;margin-bottom:18px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.2rem);color:var(--onhero);max-width:18ch}
+.hero .lead{font-size:18px;line-height:1.65;color:rgba(255,255,255,.93);max-width:62ch;margin:18px 0 28px}
+.search{display:grid;grid-template-columns:minmax(0,1fr) auto;max-width:760px;background:var(--cream);border:1.5px solid var(--cream)}
+.search input{font:18px/1.4 var(--fb);color:#20261A;background:transparent;border:0;padding:16px 18px;width:100%}
+.search input::placeholder{color:#6b6f60}
+.search button{font:600 14px var(--fb);min-height:44px;padding:0 18px;border:0;border-left:1px solid rgba(32,38,26,.18);background:transparent;color:#20261A;cursor:pointer}
+.hint{font-size:14px;color:rgba(255,255,255,.88);margin:12px 0 0;max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.fact b{display:block;font-family:var(--fd);font-size:30px;line-height:1;color:var(--onhero);font-variant-numeric:tabular-nums}
+.fact span{font-size:13.5px;color:rgba(255,255,255,.88)}
+.main{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding-block:64px 88px}
+nav.rub{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);align-self:start}
+nav.rub .eyebrow{color:var(--sagedeep);margin-bottom:12px}
+nav.rub a{display:grid;grid-template-columns:2.4em minmax(0,1fr) auto;gap:6px;align-items:baseline;padding:10px 10px 10px 12px;text-decoration:none;color:var(--text);border-left:2px solid var(--line)}
+nav.rub a:hover,nav.rub a.on{border-left-color:var(--amber);color:var(--ink);background:var(--panel)}
+nav.rub .n{font-family:var(--fm);font-size:12.5px;color:var(--amberink)}
+nav.rub .c{font-family:var(--fm);font-size:12.5px;color:var(--muted)}
+.legend{margin-top:26px;font-size:13.5px;color:var(--muted)}
+.legend p{margin:8px 0;display:flex;gap:10px;align-items:baseline}
+.legend i{width:14px;height:3px;flex:none;display:inline-block;transform:translateY(-3px)}
+.legend .l1{background:var(--sage)}.legend .l2{background:var(--amber)}
+.count{font-size:15px;color:var(--muted);margin:0 0 20px}
+.count:empty{display:none}
+section.grp{margin-bottom:60px}
+.grp-head{margin-bottom:22px}
+.grp-head .eyebrow{color:var(--sagedeep);margin-bottom:10px}
+.grp-head h2{font-size:clamp(1.7rem,3vw,2.2rem)}
+.topic{background:var(--card);border-left:3px solid var(--sage);padding:24px 28px;margin-bottom:2px}
+.topic.b2{border-left-color:var(--amber)}
+.topic:target{outline:2px solid var(--amber);outline-offset:2px}
+.topic .hd{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline}
+.topic .nr{font-family:var(--fm);font-size:13px;color:var(--amberink)}
+.topic h3{font-size:1.28rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.tag{font-family:var(--fm);font-size:12px;padding:4px 10px;border:1px solid var(--sagedeep);color:var(--sagedeep);white-space:nowrap}
+.ref{font-family:var(--fm);font-size:13px;color:var(--muted);margin:0 0 12px;overflow-wrap:anywhere}
+.kern{margin:0;color:var(--ink);font-size:16.5px;max-width:70ch}
+details{margin-top:14px}
+summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--sagedeep);min-height:36px;display:inline-flex;align-items:center}
+.prak{max-width:70ch}
+.prak p{margin:8px 0}.prak ul,.prak ol{margin:6px 0;padding-left:22px}
+dl.meta{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 16px;font-size:14px;margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+dl.meta dt{font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+dl.meta dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
+mark{background:var(--amberpale);color:var(--ink);padding:0 2px}
+.empty{padding:22px;border:1px dashed var(--line)}
+.note{background:var(--card);border-left:3px solid var(--amberdeep);padding:16px 20px;font-size:15px;margin:0 0 40px;max-width:76ch}
+.note p{margin:0}.note p+p{margin-top:10px}.note .mail{font-family:var(--fm);font-size:14px;color:var(--ink);user-select:all}
+footer{background:var(--footbg);color:var(--foottext);padding-block:28px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#C8D1A8}
+@media(max-width:900px){.main{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:36px 60px}nav.rub{position:static}nav.rub .list{display:flex;overflow-x:auto;gap:2px;padding-bottom:6px}nav.rub a{flex:none;border-left:0;border-bottom:2px solid var(--line);grid-template-columns:auto auto auto}nav.rub a.on,nav.rub a:hover{border-bottom-color:var(--amber)}.legend{display:none}}
+@media(max-width:640px){.hero .wrap{padding-block:44px 36px}.brand small{display:none}.topic{padding:20px 18px}.fact b{font-size:26px}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+<a class="brand" href="https://www.raakpunt.com"><svg viewBox="0 0 600 460" aria-hidden="true"><g opacity=".85"><circle cx="240" cy="230" r="110" fill="#7B8C5A" opacity=".55"/><circle cx="360" cy="230" r="110" fill="#4D5A2E" opacity=".55"/><circle cx="300" cy="330" r="110" fill="#C8D1A8" opacity=".7"/></g><circle cx="300" cy="268" r="17" fill="#33401D"/></svg>Raakpunt<small>Zonder Oordeel</small></a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<div class="eyebrow"><span class="rule"></span>Zonder Oordeel · Kennisbank</div>
+<h1>Kennisbank vertrouwenswerk</h1>
+<p class="lead">Wat zegt de wet over ongewenst gedrag, melden en de vertrouwenspersoon? Per onderwerp de kern, de uitwerking voor de praktijk en de officiële bron, met de datum waarop die is gecontroleerd. Voor werkgevers, ondernemingsraden, medewerkers en vertrouwenspersonen.</p>
+<form class="search" id="sf" role="search"><input id="q" type="search" placeholder="Zoek, bijvoorbeeld: geheimhouding" autocomplete="off" aria-label="Zoekterm"><button type="button" id="clear">Wissen</button></form>
+<p class="hint">Synoniemen tellen mee: geheimhouding vindt ook verschoningsrecht, klokkenluider vindt de Wbk. Elk woord moet voorkomen.</p>
+<div class="facts" id="facts"></div>
+</div></section>
+
+<div class="wrap main">
+<nav class="rub" aria-label="Rubrieken"><div class="eyebrow">Rubrieken</div><div class="list" id="nav"></div>
+<div class="legend"><p><i class="l1"></i>Volgt uit de bron</p><p><i class="l2"></i>Uitleg van de bron</p></div></nav>
+<div>
+<div class="note"><p>Deze kennisbank is algemene informatie, geen juridisch advies. Wetgeving verandert: controleer bij een concrete situatie de bron.</p><p><strong>Vragen?</strong> Over vertrouwenswerk in jouw organisatie, of over wat een externe vertrouwenspersoon voor jullie kan betekenen: ik ga graag met je in gesprek. Mail naar <a class="mail" href="mailto:daan@raakpunt.com">daan@raakpunt.com</a> of kijk op <a href="https://www.raakpunt.com">raakpunt.com</a>. Noem in een eerste bericht nog geen namen of details van een situatie.</p></div>
+<p class="count" id="count"></p><div id="list"></div></div>
+</div>
+
+<footer><div class="wrap"><div>© Raakpunt, Daan Kamerbeek. Geen juridisch advies; controleer bij twijfel de bron.</div><div id="foot"></div></div></footer>
+
+<script type="application/json" id="data">[
+{"n":1,"r":1,"t":"Beleid tegen psychosociale arbeidsbelasting","s":"Wet","reg":"Arbowet art. 3 lid 2","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0010346/","k":"De werkgever moet beleid voeren om psychosociale arbeidsbelasting te voorkomen of te beperken. Dit is de wettelijke basis onder vrijwel al het vertrouwenswerk rond ongewenst gedrag.","p":"Het artikel schrijft geen vaste maatregelen voor. In de praktijk bestaat het beleid uit risico's in de RI&E, een plan van aanpak, voorlichting en voorzieningen zoals een VP en een klachtenregeling (onderwerp 3). De Arbeidsinspectie toetst dit (onderwerp 39).\nSignaleert de VP structurele patronen, dan is dit artikel het aanknopingspunt voor advies aan werkgever en OR.","m":"Uitleg van de bron","d":"2026-11-27","x":377922},
+{"n":2,"r":1,"t":"Definitie psychosociale arbeidsbelasting","s":"Wet","reg":"Arbowet art. 1 lid 1","st":"Geldend (versie vanaf 1-7-2026)","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0010346/","k":"Psychosociale arbeidsbelasting is blootstelling aan factoren in het werk die stress veroorzaken, in ieder geval agressie of geweld, discriminatie, pesten, seksuele intimidatie en werkdruk. De opsomming is niet uitputtend.","p":"Stress is in de wet een als negatief ervaren toestand met lichamelijke, psychische of sociale gevolgen. De definitie gaat over factoren in de arbeidssituatie.\nSinds de versie van 1 juli 2026 staat de definitie in artikel 1 lid 1. Oudere klachtenregelingen en gedragscodes verwijzen nog naar artikel 1 lid 3: een concreet verbeterpunt bij opdrachtgevers.","m":"Volgt uit de bron","d":"2026-11-27","x":184039},
+{"n":3,"r":1,"t":"Uitwerking: RI&E, plan van aanpak, voorlichting","s":"Wet","reg":"Arbobesluit art. 2.15","st":"Geldend (Arbobesluit versie vanaf 1-8-2026)","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0008498/","k":"Risico's op psychosociale arbeidsbelasting horen in de RI&E, maatregelen in het plan van aanpak, en werknemers krijgen voorlichting over risico's en maatregelen.","p":"Lid 1: beoordeel de risico's in de RI&E en neem maatregelen op in het plan van aanpak, naar de stand van de wetenschap. Lid 2: voorlichting en onderricht aan werknemers die risico lopen.\nVraag bij de start van een opdracht naar de RI&E en het plan van aanpak. Staat ongewenst gedrag er niet in, dan is dat een eerste advies. Wetsvoorstel 35592 wil ook de randvoorwaarden voor de VP in de RI&E laten vastleggen.","m":"Volgt uit de bron","d":"2026-11-27","x":585625},
+{"n":4,"r":1,"t":"Verplichte vertrouwenspersoon","s":"Wetsvoorstel","reg":"Wetsvoorstel 35592, nieuw art. 13a Arbowet","st":"Aangenomen door TK op 23-5-2023. Eerste Kamer wacht op nota naar aanleiding van het verslag. Verdediging sinds 9-9-2025 door Patijn. Geen ingangsdatum.","c":"Gecontroleerd","u":"https://www.eerstekamer.nl/wetsvoorstel/35592_initiatiefvoorstel_patijn","k":"Nog geen wettelijke plicht. Wetsvoorstel 35592 ligt bij de Eerste Kamer, zonder ingangsdatum. Het verplicht een VP bij in de regel 10 of meer werknemers en legt taken, onafhankelijkheid, geheimhouding en instemming van de OR vast.","p":"Nu is er geen wettelijke plicht om een VP aan te stellen. De VP is wel een gangbare maatregel binnen het verplichte PSA-beleid (onderwerp 1).\nWordt 35592 wet, dan geldt voor werkgevers met in de regel 10 of meer werknemers:\n- elke werknemer heeft recht op toegang tot een VP;\n- OR of PVT stemt in met keuze, positionering, verlenging en beëindiging van de VP;\n- de werkgever waarborgt onafhankelijkheid, voldoende tijd en middelen (vastgelegd in de RI&E) en geheimhouding;\n- de VP mag niet worden benadeeld;\n- de werkgever koppelt schriftelijk terug wat hij met een advies van de VP doet.\nBasistaken: opvang en begeleiding, advies over een deskundige of mediator, advies over vervolgstappen en nazorg, signaleren en adviseren aan werkgever en OR, voorlichting, jaarverslag.\nLet op: de drempel telt werknemers, geen fte.","m":"Volgt uit de bron","d":"2026-11-27","x":550687},
+{"n":6,"r":1,"t":"Verplichte gedragscode ongewenst gedrag","s":"Vervallen plan","reg":"Conceptwetsvoorstel Arbowet (consultatie 2025)","st":"Kabinet ziet af van verplichting, Kamerbrief 8-6-2026 (25883 nr. 549)","c":"Gecontroleerd","u":"https://zoek.officielebekendmakingen.nl/kst-25883-549.html","k":"Een wettelijke plicht tot een gedragscode ongewenst gedrag komt er niet: het kabinet zag er in juni 2026 van af. Een gedragscode blijft wel een gangbaar onderdeel van PSA-beleid.","p":"Het conceptwetsvoorstel uit 2025 zou werkgevers met 10 of meer werknemers verplichten tot een schriftelijke gedragscode. In de Kamerbrief van 8 juni 2026 ziet het kabinet daarvan af.\nWie toch een code opstelt, kan de onderdelen uit het vervallen voorstel als leidraad gebruiken: wat ongewenst gedrag is, voorbeelden, meldmogelijkheden en gevolgen. Bij arbo-gerelateerde inhoud heeft de OR instemmingsrecht (onderwerp 20).","m":"Uitleg van de bron","d":"2026-11-27","x":902968},
+{"n":7,"r":2,"t":"Interne meldprocedure misstanden","s":"Wet","reg":"Wbk art. 2","st":"Geldend sinds 18-2-2023; vanaf 50 werknemers","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0037852/","k":"Werkgevers met in de regel 50 of meer werknemers moeten een interne meldprocedure voor misstanden hebben. Daarin staat onder meer dat een werknemer een adviseur in vertrouwen kan raadplegen.","p":"Verplichte onderdelen zijn onder meer: hoe met een melding wordt omgegaan, melden mondeling, schriftelijk of in een gesprek, aangewezen onafhankelijke functionarissen, een ontvangstbevestiging binnen 7 dagen en terugkoppeling binnen 3 maanden.\nIn de financiële sector geldt de plicht ook onder de 50 (onderwerp 27).\nCheck of de procedure de VP als adviseur in vertrouwen noemt en of melders weten dat zij ook direct extern mogen melden.","m":"Volgt uit de bron","d":"2026-11-27","x":431602},
+{"n":8,"r":2,"t":"Instemming op de meldprocedure","s":"Wet","reg":"Wbk art. 2 lid 7","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0037852/","k":"Met een OR of PVT stemt die in met de meldprocedure; zonder OR of PVT is instemming nodig van meer dan de helft van de werknemers. Regelt de cao het, dan is instemming niet nodig.","p":"Dit volgt uit Wbk art. 2 lid 7. Relevant bij een nieuwe of gewijzigde meldprocedure: zonder instemming staat de procedure zwak. Zie ook het instemmingsrecht op klachtenregelingen in de WOR (onderwerp 20).","m":"Volgt uit de bron","d":"2026-11-27","x":440285},
+{"n":9,"r":2,"t":"Bescherming tegen benadeling","s":"Wet","reg":"Wbk hoofdstuk 2a (art. 17da t/m 17i)","st":"Geldend; art. 17i nog niet in werking","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0037852/","k":"Een melder mag tijdens en na de behandeling van een melding niet worden benadeeld. Bij benadeling na een melding wordt vermoed dat die door de melding komt. Ook wie de melder bijstaat, is beschermd.","p":"Voorbeelden van benadeling: ontslag of schorsing, demotie, geweigerde promotie, negatieve beoordeling, overplaatsing, discriminatie, intimidatie of uitsluiting, en ook dreigen of pogingen daartoe. De werkgever moet aantonen dat benadeling niet door de melding komt.\nArtikel 17ec beschermt ook wie de melder bijstaat; de VP valt daar waarschijnlijk onder.\nLet op: de bescherming geldt vanaf de melding, niet in de verkennende fase daarvoor. Artikel 17i is nog niet in werking.","m":"Uitleg van de bron","d":"2026-11-27","x":732628},
+{"n":10,"r":2,"t":"Huis voor Klokkenluiders: advies en onderzoek","s":"Wet","reg":"Wbk art. 3a","st":"Geldend","c":"Gecontroleerd","u":"https://www.huisvoorklokkenluiders.nl","k":"Het Huis voor Klokkenluiders adviseert melders en verwijst door, en kan onderzoek doen naar een misstand of naar benadeling van een melder.","p":"Afdeling advies: informatie, advies en doorverwijzing, ook over de risico's van melden. Het Huis kan doorverwijzen naar kosteloze rechtsbijstand en psychosociale ondersteuning. Afdeling onderzoek: onderzoek naar misstanden en benadeling, plus algemene aanbevelingen.\nEen VP kan het Huis ook zelf anoniem of hypothetisch om advies vragen (onderwerp 22). Houd rekening met wachttijd: in 2025 ontstond een wachtrij.","m":"Uitleg van de bron","d":"2026-11-27","x":69715},
+{"n":12,"r":3,"t":"Discriminatie en (seksuele) intimidatie","s":"Wet","reg":"AWGB art. 1, 1a en 2","st":"Geldend (versie vanaf 1-1-2026)","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0006502/","k":"De AWGB verbiedt onderscheid op grond van onder meer godsdienst, levensovertuiging, politieke gezindheid, ras, geslacht, nationaliteit, seksuele gerichtheid en burgerlijke staat, en daarmee ook intimidatie en seksuele intimidatie.","p":"Geslacht omvat ook geslachtskenmerken, genderidentiteit en genderexpressie.\nIntimidatie: gedrag dat samenhangt met een beschermde grond en de waardigheid aantast, vooral in een bedreigende, vijandige, beledigende, vernederende of kwetsende omgeving. Seksuele intimidatie: verbaal, non-verbaal of fysiek gedrag met een seksuele lading met datzelfde effect.\nDeze definities zijn de toets bij een klacht bij het College voor de Rechten van de Mens (onderwerp 38). Leeftijd en handicap staan in aparte wetten.","m":"Volgt uit de bron","d":"2026-11-27","x":923355},
+{"n":13,"r":3,"t":"Seksuele intimidatie in de arbeidsrelatie","s":"Wet","reg":"BW art. 7:646 lid 6 t/m 9","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0005290/","k":"In de arbeidsrelatie zijn intimidatie en seksuele intimidatie verboden. De werkgever mag niemand benadelen omdat die dit gedrag afwijst of ondergaat.","p":"Lid 6 tot en met 9 werken de begrippen uit, in lijn met de AWGB. Lid 14 beschermt ook wie zich op het verbod beroept of een ander daarbij bijstaat (onderwerp 40).\nHet artikel gaat over onderscheid naar geslacht; voor andere gronden geldt de AWGB.","m":"Volgt uit de bron","d":"2026-11-27","x":725418},
+{"n":14,"r":3,"t":"Nieuwe zedenwet; seksuele intimidatie in het openbaar strafbaar","s":"Wet","reg":"Wet seksuele misdrijven; Sr art. 429ter","st":"Geldend sinds 1-7-2024","c":"Gecontroleerd","u":"https://zoek.officielebekendmakingen.nl/stb-2024-61.html","k":"Sinds 1 juli 2024 geldt de Wet seksuele misdrijven. Seksuele intimidatie in het openbaar is strafbaar (Sr art. 429ter). De wet werkt niet terug.","p":"Aangifte van aanranding of verkrachting kan nu ook als duidelijk was dat iemand het niet wilde; dwang is niet meer vereist. Voor feiten van vóór 1 juli 2024 geldt de oude zedenwetgeving.\nArtikel 429ter gaat over het openbaar, niet specifiek over de werkvloer.\nDe melder beslist zelf over aangifte; de VP doet geen aangifte namens de melder en wijst op de mogelijkheden en de eigen regie (onderwerp 24).","m":"Uitleg van de bron","d":"2026-11-27","x":95916},
+{"n":16,"r":4,"t":"Geheimhoudingsplicht vertrouwenspersoon","s":"Wetsvoorstel","reg":"Wetsvoorstel 35592, art. 13a lid 9","st":"Zie wetsvoorstel 35592","c":"Gecontroleerd","u":"https://www.eerstekamer.nl/wetsvoorstel/35592_initiatiefvoorstel_patijn","k":"Het wetsvoorstel legt een wettelijke geheimhoudingsplicht op de VP. Tot het wet is, rust geheimhouding op contract, beleid en de LVV-gedragscode.","p":"Nu volgt de geheimhouding uit de aanstelling of opdracht, de klachtenregeling of het VP-beleid van de organisatie, en voor LVV-leden uit de gedragscode (onderwerp 21).\nZorg dat geheimhouding en uitzonderingen schriftelijk in de opdracht staan, inclusief wanneer de opdrachtgever geïnformeerd wil worden (onderwerp 22). Ook een wettelijke geheimhoudingsplicht geeft niet vanzelf verschoningsrecht (onderwerp 15).","m":"Uitleg van de bron","d":"2026-11-27","x":165748},
+{"n":18,"r":4,"t":"Aangifteplicht bij bepaalde ernstige misdrijven","s":"Wet","reg":"Sv art. 160","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0001903/","k":"Iedereen die weet van bepaalde ernstige misdrijven, moet aangifte doen, ook de VP. Er is geen plicht als je jezelf of een naaste daarmee blootstelt aan vervolging.","p":"Het gaat onder meer om misdrijven tegen de staatsveiligheid, levensdelicten, mensenhandel, verkrachting, terroristische misdrijven en wederrechtelijke vrijheidsberoving.\nBij verkrachting staat volgens de brochure Vertrouwelijk, tenzij de wil van het slachtoffer voorop, omdat diens medewerking nodig is voor het onderzoek. Voorkeur: de melder doet zelf aangifte.\nVoor ambtenaren geldt aanvullend art. 162 Sv (onderwerp 22).","m":"Volgt uit de bron","d":"2026-11-27","x":456711},
+{"n":19,"r":4,"t":"Hulpplicht bij levensgevaar","s":"Wet","reg":"Sr art. 450","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0001854/","k":"Wie iemand in ogenblikkelijk levensgevaar geen redelijke hulp biedt, is strafbaar, maar alleen als die persoon overlijdt.","p":"De plicht vervalt als hulp gevaar oplevert voor jezelf of anderen.\nAls argument om vertrouwelijkheid te doorbreken is dit artikel beperkt. Bij acuut gevaar, zoals een suïcidedreiging, geeft gewetensnood (onderwerp 22) de ruimte om te handelen: schakel hulp in, bijvoorbeeld 113 of 112.","m":"Uitleg van de bron","d":"2026-11-27","x":221202},
+{"n":20,"r":5,"t":"Instemmingsrecht OR","s":"Wet","reg":"WOR art. 27 lid 1 onder d, j en l","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0002747/","k":"De OR heeft instemmingsrecht op regelingen over arbo (onder d), klachtenbehandeling (onder j) en systemen die gedrag of prestaties kunnen volgen (onder l). Klachtenregeling en gedragscode vallen daar meestal onder.","p":"De aanstelling van een VP staat niet expliciet in de WOR, maar raakt via arbo en klachtenbehandeling vaak aan het instemmingsrecht. Wetsvoorstel 35592 maakt instemming op keuze, positionering, verlenging en beëindiging van de VP expliciet (onderwerp 4).\nVraag bij een externe aanstelling of de OR betrokken is; dat versterkt draagvlak en onafhankelijkheid.","m":"Uitleg van de bron","d":"2026-11-27","x":969663},
+{"n":22,"r":6,"t":"Vertrouwelijkheid en de grenzen ervan","s":"Veldnorm","reg":"Brochure Vertrouwelijk, tenzij (Huis voor Klokkenluiders en LVV, december 2025)","st":"Geldend","c":"Gecontroleerd","u":"https://www.huisvoorklokkenluiders.nl","k":"Vertrouwelijkheid geldt, behalve bij een aangifteplicht, gewetensnood, afspraken met de opdrachtgever, een vordering van het OM of een vraag van de rechter. De VP heeft geen verschoningsrecht. Voorkeur: de melder zet zelf de stap.","p":"Vertrouwelijkheid is de basis van het werk. Doorbreken komt zelden voor: benoem de grenzen kort in het eerste gesprek, zonder er de nadruk op te leggen.\nDe brochure noemt zeven situaties:\n1. aangifteplicht voor iedereen bij ernstige misdrijven (art. 160 Sv);\n2. extra aangifteplicht voor ambtenaren (art. 162 Sv). Een ingehuurde VP bij een overheidsorganisatie kan als ambtenaar worden aangemerkt;\n3. gewetensnood, zoals een suïcidedreiging of ernstig gevaar voor personen;\n4. afspraken met de opdrachtgever;\n5. een meldplicht uit een andere rol richting een toezichthouder; wie die heeft, kan geen VP zijn;\n6. een schriftelijke vordering van het OM;\n7. een vraag van de rechter: er is geen verschoningsrecht.\nBij gewetensnood eerst anoniem of hypothetisch advies vragen: collega-VP, vertrouwensarts, Veilig Thuis, Centrum Seksueel Geweld, 113 of het Huis.\nVoorkeur: de melder zet zelf de stap. Lukt dat niet, vertel dan eerst dat de VP het zelf gaat doen.\nLeg vóór de start met de opdrachtgever schriftelijk vast wanneer die geïnformeerd wil worden, en zorg dat medewerkers dat weten.","m":"Volgt uit de bron","d":"2026-11-27","x":691844},
+{"n":24,"r":6,"t":"Melding seksueel ongewenst gedrag na nieuwe zedenwet","s":"Veldnorm","reg":"LVV-leidraad Wet seksuele misdrijven (nov 2024)","st":"Geldend","c":"Gecontroleerd","u":"https://www.lvvv.nl//l/library/download/urn:uuid:66e8e246-8149-47e1-bbf1-67652323cce8/201-241107et+modernisering+wet+seksuele+misdrijven+%28voor+nieuwsbrief%29.pdf","k":"Bij een melding van seksueel ongewenst gedrag doet de VP geen feitenonderzoek en geen aangifte. De melder beslist zelf; de VP wijst op de mogelijkheden en de eigen regie.","p":"Volgens de leidraad is seksueel ongewenst gedrag sneller strafbaar, bijvoorbeeld bij een afhankelijkheidsrelatie, en is aangifte ruimer mogelijk.\nDe VP luistert, helpt de melder de zaken op een rij te zetten, wijst op de ruimere aangiftemogelijkheden en op het voorkomen van hernieuwd slachtofferschap, en adviseert de organisatie over preventie. De melder moet toegang hebben tot een klachtencommissie.","m":"Uitleg van de bron","d":"2026-11-27","x":832866},
+{"n":25,"r":6,"t":"Certificering en nascholing","s":"Veldnorm","reg":"LVV-register; hercertificering via Hobéon SKO; landelijk examen door SKV","st":"Geldend","c":"Gecontroleerd","u":"https://www.lvvv.nl/hercertificering-van-lvv-registervertrouwenspersoon-pe","k":"LVV-registervertrouwenspersonen hercertificeren elke 4 jaar met minimaal 72 uur permanente educatie. Het landelijk examen ligt bij SKV.","p":"Verdeling: minimaal 24 uur door de LVV geaccrediteerde bij- en nascholing, 32 uur intervisie volgens de LVV-richtlijnen (geregistreerd op de LVV-intervisiesite) en 16 uur extra activiteiten, zoals e-learnings, congressen en eigen publicaties.\nHobéon SKO beheert het hercertificeringsdossier. Klachten tegen een registervertrouwenspersoon gaan naar de LVV-klachtencommissie (onderwerp 26).","m":"Volgt uit de bron","d":"2026-11-27","x":430620},
+{"n":27,"r":7,"t":"Meldregeling ook onder 50 werknemers","s":"Wet","reg":"Wbk art. 2 in samenhang met richtlijn (EU) 2019/1937","st":"Geldend","c":"Gecontroleerd","u":"https://ondernemersplein.overheid.nl/meldregeling-voor-misstanden","k":"In de financiële sector moet ook een werkgever met minder dan 50 werknemers een interne meldprocedure hebben.","p":"Dit volgt uit de Europese klokkenluidersrichtlijn zoals overgenomen in de Wbk; financiële diensten zijn een van de terreinen waar de drempel niet geldt.\nCheck bij kleine financiële ondernemingen of er een meldprocedure is en of de VP daarin als adviseur in vertrouwen staat. Daarnaast kan de Wwft een eigen meldvoorziening eisen (onderwerp 32).","m":"Uitleg van de bron","d":"2026-11-27","x":300499},
+{"n":28,"r":7,"t":"Integere bedrijfsvoering","s":"Wet","reg":"Wft art. 3:10 en 4:11","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0020368/","k":"Financiële ondernemingen moeten een beleid voeren dat een integere bedrijfsuitoefening waarborgt, en incidenten melden aan DNB (prudentieel) of de AFM (gedrag).","p":"Het beleid moet onder meer belangenverstrengeling tegengaan, strafbare feiten en wetsovertredingen door onderneming of medewerkers, en gedrag dat het vertrouwen ernstig kan schaden.\nDit is de context waarin integriteitsmeldingen landen: wat een melder aan de organisatie meldt, kan een incident worden dat de instelling moet melden. Zie onderwerp 43 voor de verhouding met de vertrouwelijkheid van de VP.","m":"Uitleg van de bron","d":"2026-11-27","x":297258},
+{"n":29,"r":7,"t":"Integriteitsrisico's, incidenten en interne meldprocedure","s":"Wet","reg":"Bpr art. 10, 12 en 23i","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0020420/","k":"Financiële ondernemingen analyseren integriteitsrisico's, hebben een incidentenprocedure en melden incidenten direct aan DNB. Banken en bepaalde beleggingsondernemingen hebben ook een interne meldprocedure voor werknemers.","p":"Art. 10: systematische analyse van integriteitsrisico's, vastgelegd in procedures, met onafhankelijk toezicht; tekortkomingen gaan naar compliance.\nArt. 12: procedures voor de omgang met incidenten, maatregelen tegen herhaling en onverwijld melden aan DNB.\nArt. 23i: interne meldprocedure voor overtredingen van kapitaal- en prudentiële regels.\nWeet waar compliance zit en hoe de interne meldroute loopt, zodat de melder goed kan worden doorverwezen.","m":"Volgt uit de bron","d":"2026-11-27","x":140969},
+{"n":30,"r":7,"t":"Bankierseed","s":"Wet","reg":"Wft art. 3:17b","st":"Geldend sinds 1-4-2015","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0020368/","k":"Bankmedewerkers leggen de eed of belofte af en houden zich aan de bijbehorende gedragsregels. Bij andere financiële ondernemingen geldt dat voor wie wezenlijke invloed heeft op het risicoprofiel of rechtstreeks diensten verleent.","p":"De onderneming moet procedures hebben die de eed borgen en de naleving bewaken. Schending kan tot tuchtrecht leiden (onderwerp 31).\nEen melding over de integriteit van een collega kan ook een schending van de eed raken. De melder kan dan kiezen tussen de interne meldroute en een melding bij Stichting Tuchtrecht Banken.","m":"Uitleg van de bron","d":"2026-11-27","x":936630},
+{"n":32,"r":7,"t":"Interne anonieme melding Wwft-overtredingen","s":"Wet","reg":"Wwft art. 20a","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0024282/","k":"Wwft-instellingen moeten een interne, anonieme en onafhankelijke voorziening hebben voor het melden van overtredingen van de Wwft, passend bij aard en omvang.","p":"Het BFT verwacht dit bij instellingen onder zijn toezicht vanaf 10 werknemers; dat is toezichtspraktijk, geen wettekst.\nBij een kleine financiële onderneming, een notaris- of accountantskantoor kan de VP ook in deze voorziening een rol krijgen. Leg dan vast hoe anonimiteit wordt geborgd.","m":"Uitleg van de bron","d":"2026-11-27","x":301457},
+{"n":35,"r":6,"t":"Gecombineerde functie integriteit en ongewenste omgangsvormen","s":"Veldnorm","reg":"Brochure Integriteit in de praktijk: Vertrouwenspersoon (Huis voor Klokkenluiders, januari 2024)","st":"Geldend","c":"Gecontroleerd","u":"https://www.huisvoorklokkenluiders.nl/binaries/huisvoorklokkenluiders/documenten/brochures/2024/01/30/integriteit-in-de-praktijk---vertrouwenspersoon/20240125+Brochure+Integriteit+in+de+Praktijk_Vertrouwenspersoon.pdf","k":"Brochure van het Huis over de gecombineerde functie van VP voor integriteit en ongewenste omgangsvormen, met taken, registratie en jaarverslag, en de grenzen van vertrouwelijkheid.","p":"De brochure onderscheidt de VP ongewenste omgangsvormen, die vooral het belang van de melder volgt en de regie bij de melder laat, en de VP integriteit. Ze gaat in op taken, registratie en jaarlijkse rapportage, vertrouwelijkheid en doormeld- of aangifteplicht.\nBruikbaar als publieke onderbouwing richting opdrachtgevers.","m":"Uitleg van de bron","d":"2026-11-27","x":87226},
+{"n":36,"r":2,"t":"Vertrouwelijk melden bij de VP tegenover melden bij leidinggevende of HR","s":"Wet","reg":"Arbowet art. 3 lid 2; BW art. 7:611 en 7:658; Wbk art. 2 lid 2 onder g","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0037852/","k":"Wat de leidinggevende of HR hoort, weet de werkgever, en die moet vaak handelen. Bij de VP blijft het vertrouwelijk en houdt de melder de regie.","p":"Wat een medewerker aan de leidinggevende of HR vertelt, weet de werkgever. Die moet vanuit zorgplicht en goed werkgeverschap vaak handelen: een gesprek met de beschuldigde, een onderzoek, een maatregel. De melder verliest dan de regie over tempo en route.\nBij de VP blijft het vertrouwelijk, binnen de grenzen van onderwerp 22. De melder bepaalt zelf of en wanneer de organisatie het hoort.\nPraktisch:\n- neem dit op in de voorlichting aan leidinggevenden, zodat zij een medewerker vóór het verhaal kunnen wijzen op de vertrouwelijke route;\n- check bij integriteit of de meldprocedure de VP noemt als adviseur in vertrouwen (Wbk art. 2).","m":"Uitleg van de bron","d":"2026-11-27","x":495235},
+{"n":37,"r":2,"t":"Afbakening: misstand, integriteitsschending of ongewenst gedrag","s":"Wet","reg":"Wbk art. 1 (misstand, maatschappelijk belang); Arbowet art. 1 lid 1 (psychosociale arbeidsbelasting)","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0037852/","k":"Misstand (Wbk) vraagt maatschappelijk belang; een integriteitsschending volgt uit de eigen gedragscode; ongewenst gedrag valt onder PSA. Elk spoor heeft een eigen route en overlap komt voor.","p":"Drie sporen, elk met een eigen regeling en route.\n1. Misstand (Wbk): schending van EU-recht, of een handeling waarbij het maatschappelijk belang in het geding is. Dat is in ieder geval zo als het verder gaat dan persoonlijke belangen en er een patroon is, of het ernstig of omvangrijk is. Route: interne meldprocedure, bevoegde autoriteit of het Huis. Met bescherming tegen benadeling.\n2. Integriteitsschending: geen wettelijke definitie. Volgt uit gedragscode en integriteitsbeleid van de organisatie. Route: meldregeling integriteit of VP integriteit.\n3. Ongewenst gedrag (PSA): agressie of geweld, discriminatie, pesten, seksuele intimidatie. Route: VP, informele oplossing, klachtencommissie.\nOverlap komt voor: structureel grensoverschrijdend gedrag in een team kan ook een misstand zijn. Bij twijfel samen met de melder beide routes verkennen; het Huis adviseert over de toets.","m":"Uitleg van de bron","d":"2026-11-27","x":35336},
+{"n":38,"r":2,"t":"Externe route: College voor de Rechten van de Mens","s":"Wet","reg":"Wet College voor de rechten van de mens art. 10; AWGB art. 1a","st":"Geldend","c":"Gecontroleerd","u":"https://www.rijksoverheid.nl/onderwerpen/gelijke-behandeling-op-het-werk/vraag-en-antwoord/wat-kan-ik-doen-als-ik-ongelijk-behandeld-word-bij-een-sollicitatie-of-op-het-werk","k":"Bij discriminatie of (seksuele) intimidatie kan een werknemer het College voor de Rechten van de Mens om een oordeel vragen. Het oordeel is niet bindend, maar wordt vaak opgevolgd.","p":"Eerst naar het College is niet verplicht: de werknemer kan ook direct naar de rechter, die een oordeel van het College moet laten meewegen. Ook werkgevers en ondernemingsraden kunnen het College om advies vragen.\nNoem deze route als de interne weg niets oplevert of de melder geen vertrouwen heeft in de interne klachtenprocedure. Antidiscriminatiebureaus bieden daarbij hulp.","m":"Uitleg van de bron","d":"2026-11-27","x":62574},
+{"n":40,"r":3,"t":"Bescherming bij een klacht die buiten de Wbk valt","s":"Wet","reg":"AWGB art. 8a; BW art. 7:646 lid 9 en 14","st":"Geldend","c":"Gecontroleerd","u":"https://wetten.overheid.nl/BWBR0006502/","k":"Wie klaagt over discriminatie of (seksuele) intimidatie, of daarbij helpt, mag daarvoor niet worden benadeeld, ook buiten de Wbk. Bij pesten zonder discriminatiegrond is geen specifiek verbod gevonden.","p":"Wie een klacht indient over discriminatie of (seksuele) intimidatie, of daarbij bijstand verleent, mag daarvoor niet worden benadeeld (AWGB art. 8a; BW 7:646 lid 14). Het afwijzen of ondergaan van (seksuele) intimidatie mag geen grond zijn voor een beslissing over iemand (AWGB art. 8a; BW 7:646 lid 9).\nDit geldt los van de Wbk: er hoeft geen maatschappelijk belang in het geding te zijn.\nBij pesten of intimidatie zonder discriminatiegrond is geen specifiek benadelingsverbod gevonden. Dan blijven goed werkgeverschap (7:611), de zorgplicht (7:658) en wat de klachtenregeling zelf regelt.\nBij benadeling: de melder laten vastleggen wat er gebeurt, en wijzen op het College voor de Rechten van de Mens en de rechter.\nAls VP die bijstand verleent, val je waarschijnlijk zelf ook onder deze bescherming.","m":"Uitleg van de bron","d":"2026-11-27","x":802520}
+]</script>
+<script type="application/json" id="meta">{"revisie":17,"bijgewerkt":"2026-11-27","aantal":29,"publiek":[1,2,3,4,6,7,8,9,10,12,13,14,16,18,19,20,22,24,25,27,28,29,30,32,35,36,37,38,40]}</script>
+<script>
+{
+const D = JSON.parse(document.getElementById('data').textContent);
+const META = JSON.parse(document.getElementById('meta').textContent);
+const RUB = {1:'Kader van de functie',2:'Melden',3:'Ongewenst gedrag',4:'Vertrouwelijkheid en privacy',5:'Medezeggenschap',6:'Veldnormen',7:'Financiële sector'};
+const SYN = {
+ geheim:['geheimhouding','vertrouwelijk','verschoningsrecht','doorbreken'],
+ vertrouwelijk:['geheimhouding','verschoningsrecht','doorbreken','gewetensnood'],
+ doorbreken:['vertrouwelijk','gewetensnood','aangifteplicht','verschoningsrecht'],
+ klokkenluid:['wbk','misstand','meldprocedure','huis voor klokkenluiders'],
+ misstand:['wbk','klokkenluider','meldprocedure'],
+ represaille:['benadeling','benadeeld'],ontslag:['benadeling','benadeeld'],benadel:['benadeling','benadeeld','bescherming'],
+ privacy:['avg','persoonsgegevens'],
+ ondernemingsraad:['or','instemming','instemmingsrecht'],instemming:['or','instemmingsrecht'],
+ bank:['bankierseed','financiele','dnb','afm','wft'],financ:['wft','bpr','dnb','afm','bankierseed','wwft'],
+ dnb:['wft','bpr','incident'],afm:['wft','incident'],witwas:['wwft'],
+ aangifte:['aangifteplicht','politie','zedenwet','seksuele misdrijven'],
+ anoniem:['anoniem','tussenpersoon','intermediair'],
+ suicide:['gewetensnood','levensgevaar','113'],zelfmoord:['gewetensnood','levensgevaar','113'],
+ discrimin:['awgb','college voor de rechten van de mens','gelijke behandeling'],
+ seks:['seksuele intimidatie','zedenwet','seksuele misdrijven','7:646'],
+ pest:['pesten','psychosociale arbeidsbelasting','psa'],
+ klacht:['klachtencommissie','klachtenregeling','college'],
+ rechter:['verschoningsrecht','college'],
+ verplicht:['wetsvoorstel 35592','verplichte'],
+ werkdruk:['psychosociale arbeidsbelasting','psa'],
+ inspectie:['arbeidsinspectie','ri&e']
+};
+const has = new Set(D.map(t => t.n));
+const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2,'0');
+/* verwijzingen naar onderwerpen die niet in deze publieke versie staan, weglaten */
+const tidy = s => String(s||'')
+ .replace(/\s*Zie onderwerp (\d+)[^.\n]*\.?/g, (m,n) => has.has(+n) ? m : '')
+ .replace(/\s*\(onderwerp (\d+)\)/g, (m,n) => has.has(+n) ? m : '');
+D.forEach(t => {t.k2 = tidy(t.k); t.p2 = tidy(t.p); t.hT = norm(t.t); t.hK = norm(t.k2+' '+t.reg+' '+t.s); t.hP = norm(t.p2+' '+t.st);});
+const dNL = iso => { const [y,m,d] = String(iso).split('-'); return d && m && y ? Number(d)+'-'+Number(m)+'-'+y : esc(iso); };
+const rubCount = new Set(D.map(t => t.r)).size;
+document.getElementById('facts').innerHTML = [[D.length,'onderwerpen'],[rubCount,'rubrieken'],[dNL(META.bijgewerkt),'laatst bijgewerkt']].map(([v,l]) => '<div class="fact"><b>'+v+'</b><span>'+esc(l)+'</span></div>').join('');
+document.getElementById('foot').textContent = 'Bronnen bewaakt; laatst bijgewerkt '+dNL(META.bijgewerkt);
+function terms(q){
+ const words = norm(q).split(/[^a-z0-9:&]+/).filter(w => w.length > 1);
+ return words.map(w => { const set = new Set([w]); for (const k in SYN) if (w.startsWith(k) || k.startsWith(w) && w.length > 3) SYN[k].forEach(x => set.add(norm(x))); return [...set]; });
+}
+function search(q){
+ const T = terms(q); if (!T.length) return [];
+ const out = [];
+ for (const t of D){
+  let score = 0, ok = true;
+  for (const group of T){
+   let best = 0;
+   for (const w of group){ if (t.hT.includes(w)) best = Math.max(best,3); else if (t.hK.includes(w)) best = Math.max(best,2); else if (t.hP.includes(w)) best = Math.max(best,1); }
+   if (!best){ ok = false; break; }
+   score += best;
+  }
+  if (ok) out.push({t, score});
+ }
+ return out.sort((a,b) => b.score - a.score || a.t.n - b.t.n).map(x => x.t);
+}
+function hl(html, q){
+ if (!q) return html;
+ const ws = terms(q).flat().filter(w => w.length > 2).map(w => esc(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+ if (!ws.length) return html;
+ const re = new RegExp('(' + ws.join('|') + ')', 'gi');
+ return html.split(/(<[^>]+>)/).map(part => part.startsWith('<') ? part : part.replace(re, '<mark>$1</mark>')).join('');
+}
+const linkRefs = h => h.replace(/onderwerp (\d+)/g, (m,n) => has.has(+n) ? '<a href="#t'+n+'">onderwerp '+n+'</a>' : m);
+function prak(p){
+ let html = '', list = null;
+ for (const line of String(p||'').split('\n')){
+  const ul = line.match(/^- (.*)/), ol = line.match(/^\d+\. (.*)/);
+  const kind = ul ? 'ul' : ol ? 'ol' : null;
+  if (kind !== list){ if (list) html += '</'+list+'>'; if (kind) html += '<'+kind+'>'; list = kind; }
+  if (kind) html += '<li>'+linkRefs(esc((ul||ol)[1]))+'</li>';
+  else if (line.trim()) html += '<p>'+linkRefs(esc(line))+'</p>';
+ }
+ if (list) html += '</'+list+'>';
+ return html;
+}
+const bCls = m => m === 'Uitleg van de bron' ? 'b2' : '';
+const host = u => String(u||'').replace(/^https:\/\/(www\.)?/,'').split('/')[0];
+function card(t, q, open){
+ const safeU = t.u && t.u.startsWith('https://') ? esc(t.u) : '';
+ return '<article class="topic '+bCls(t.m)+'" id="t'+t.n+'"><div class="hd"><span class="nr">'+pad(t.n)+'</span><h3>'+hl(esc(t.t), q)+'</h3></div>'+
+ '<div class="tags"><span class="tag">'+esc(t.s)+'</span><span class="tag">'+esc(t.m)+'</span></div>'+
+ '<p class="ref">'+esc(t.reg)+'</p>'+
+ '<p class="kern">'+hl(linkRefs(esc(t.k2)), q)+'</p>'+
+ '<details'+(open?' open':'')+'><summary>Uitwerking en bron</summary><div class="prak">'+hl(prak(t.p2), q)+'</div>'+
+ '<dl class="meta"><dt>Rubriek</dt><dd>'+esc(RUB[t.r])+'</dd><dt>Status</dt><dd>'+esc(t.st)+'</dd><dt>Gecontroleerd</dt><dd>'+(t.d ? dNL(t.d) : 'onbekend')+'</dd><dt>Bron</dt><dd>'+(safeU ? '<a href="'+safeU+'" target="_blank" rel="noopener">'+esc(host(t.u))+'</a>' : 'niet vermeld')+'</dd></dl></details></article>';
+}
+const listEl = document.getElementById('list'), countEl = document.getElementById('count'), navEl = document.getElementById('nav');
+const rubs = Object.keys(RUB).filter(r => D.some(t => t.r == r));
+navEl.innerHTML = rubs.map(r => '<a href="#r'+r+'"><span class="n">'+pad(r)+'</span><span>'+esc(RUB[r])+'</span><span class="c">'+D.filter(t => t.r == r).length+'</span></a>').join('');
+function render(q){
+ if (!q.trim()){
+  countEl.textContent = '';
+  listEl.innerHTML = rubs.map(r => '<section class="grp" id="r'+r+'"><div class="grp-head"><div class="eyebrow"><span class="rule"></span>Rubriek '+pad(r)+'</div><h2>'+esc(RUB[r])+'</h2></div>'+D.filter(t => t.r == r).sort((a,b)=>a.n-b.n).map(t => card(t,'',false)).join('')+'</section>').join('');
+  observe(); return;
+ }
+ const res = search(q);
+ countEl.textContent = res.length ? res.length + (res.length === 1 ? ' onderwerp gevonden voor ' : ' onderwerpen gevonden voor ') + '"' + q.trim() + '"' : 'Niets gevonden voor "' + q.trim() + '". Probeer een ander woord.';
+ listEl.innerHTML = res.length ? '<section class="grp">'+res.map(t => card(t, q, !norm(t.t+' '+t.k2).includes(terms(q)[0][0]))).join('')+'</section>' : '<p class="empty">Geen onderwerp bevat deze termen.</p>';
+}
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navEl.querySelectorAll('a').forEach(a => a.classList.toggle('on', '#'+e.target.id === a.getAttribute('href'))); }), {rootMargin:'-100px 0px -70% 0px'});
+function observe(){ document.querySelectorAll('section.grp[id]').forEach(s => io.observe(s)); }
+const qEl = document.getElementById('q');
+let tm; qEl.addEventListener('input', () => { clearTimeout(tm); tm = setTimeout(() => render(qEl.value), 140); });
+document.getElementById('sf').addEventListener('submit', e => { e.preventDefault(); render(qEl.value); countEl.scrollIntoView(); });
+document.getElementById('clear').addEventListener('click', () => { qEl.value = ''; render(''); qEl.focus(); });
+render('');
+navEl.addEventListener('click', () => { if (qEl.value) { qEl.value = ''; render(''); } });
+listEl.addEventListener('click', e => { const a = e.target.closest('a[href^="#t"]'); if (a && qEl.value) { const id = a.getAttribute('href').slice(1); qEl.value = ''; render(''); requestAnimationFrame(() => { const el = document.getElementById(id); if (el) el.scrollIntoView(); }); e.preventDefault(); } });
+}
+</script>
+
+</body>
+</html>
