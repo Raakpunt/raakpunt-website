@@ -94,6 +94,100 @@ footer a{color:#C8D1A8}
 @media(max-width:900px){.main{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:36px 60px}nav.rub{position:static}nav.rub .list{display:flex;overflow-x:auto;gap:2px;padding-bottom:6px}nav.rub a{flex:none;border-left:0;border-bottom:2px solid var(--line);grid-template-columns:auto auto auto}nav.rub a.on,nav.rub a:hover{border-bottom-color:var(--amber)}.legend{display:none}}
 @media(max-width:640px){.hero .wrap{padding-block:44px 36px}.brand small{display:none}.topic{padding:20px 18px}.fact b{font-size:26px}}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.ing{background:var(--panel)}
+.ing .wrap{padding-block:56px 60px}
+.ing .eyebrow{color:var(--sagedeep);margin-bottom:12px}
+.ing h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.ing .ing-lead{margin:12px 0 0;max-width:62ch;color:var(--text)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 18px}
+.tab{font:600 14.5px var(--fb);min-height:44px;padding:10px 18px;border:1.5px solid var(--sagedeep);background:transparent;color:var(--sagedeep);cursor:pointer;text-align:left}
+.tab:hover{background:var(--bg)}
+.tab[aria-selected=true]{background:var(--sagedeep);color:var(--bg)}
+.tab .tc{font-family:var(--fm);font-size:12px;margin-left:8px;opacity:.8}
+.qa{background:var(--bg);border-left:3px solid var(--sage);margin:0 0 2px;padding:2px 24px 4px}
+.qa.b2{border-left-color:var(--amber)}
+.qa>summary{display:block;position:relative;cursor:pointer;font:600 16.5px/1.45 var(--fb);color:var(--ink);padding:14px 34px 14px 0;min-height:44px;list-style:none}
+.qa>summary::-webkit-details-marker{display:none}
+.qa>summary::after{content:"";position:absolute;right:6px;top:20px;width:9px;height:9px;border-right:2px solid var(--amberink);border-bottom:2px solid var(--amberink);transform:rotate(45deg);transition:transform .15s ease}
+.qa[open]>summary::after{transform:rotate(-135deg);top:24px}
+.ing-key{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13.5px;color:var(--muted);margin:-4px 0 16px}
+.ing-key span{display:inline-flex;align-items:center;gap:8px}
+.ing-key i{width:14px;height:3px;display:inline-block;background:var(--sage)}
+.ing-key i.k2{background:var(--amber)}
+.qa[open]>summary{padding-bottom:6px}
+.qa .a{margin:0 0 12px;max-width:70ch;color:var(--ink)}
+.qa .qt{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.qa .qt span{font-family:var(--fm);font-size:12px;padding:3px 9px;border:1px solid var(--sagedeep);color:var(--sagedeep)}
+.qa .qt .half{border-color:var(--amberink);color:var(--amberink)}
+.qa .qt .todo{border-color:#9b3b23;color:#9b3b23}
+.qa .refs{list-style:none;margin:0 0 16px;padding:10px 0 0;border-top:1px solid var(--line);font-size:14.5px}
+.qa .refs li{margin:4px 0}
+.qa .refs a{text-decoration:none}
+.qa .refs a:hover{text-decoration:underline}
+.qa .refs .nr{font-family:var(--fm);font-size:12.5px;margin-right:8px}
+.qa .refs .src a{overflow-wrap:anywhere}
+.qa .refs .lbl{font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+@media(max-width:640px){.ing .wrap{padding-block:40px 44px}.qa{padding:2px 16px 4px}.tab{flex:1 1 100%}}
+
+.cl{background:var(--bg);border-left:3px solid var(--amber);padding:24px 28px 20px;margin:0 0 18px}
+.cl .cl-hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px}
+.cl h3{font-size:1.35rem}
+.cl .cl-lead{margin:8px 0 0;max-width:66ch;color:var(--text);font-size:15px}
+.cl .cl-btn{font:600 14px var(--fb);min-height:44px;padding:8px 16px;border:1.5px solid var(--sagedeep);background:transparent;color:var(--sagedeep);cursor:pointer}
+.cl .cl-btn:hover{background:var(--panel)}
+.cl ol.steps{list-style:none;margin:18px 0 0;padding:0;counter-reset:st}
+.cl ol.steps>li{counter-increment:st;padding:14px 0 10px;border-top:1px solid var(--line)}
+.cl ol.steps>li>h4{font:600 16px/1.4 var(--fb);color:var(--ink);margin:0 0 8px;display:flex;gap:12px;align-items:baseline}
+.cl ol.steps>li>h4::before{content:counter(st);font-family:var(--fm);font-size:13px;color:var(--amberink);min-width:1.4em}
+.cl ul.items{list-style:none;margin:0;padding:0 0 0 calc(1.4em + 12px)}
+.cl ul.items li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;margin:0 0 10px}
+.cl input[type=checkbox]{width:18px;height:18px;margin:3px 0 0;accent-color:var(--sage)}
+.cl .it{color:var(--ink);font-size:15px;line-height:1.55}
+.cl .it .k{font-family:var(--fm);font-size:11.5px;letter-spacing:.04em;padding:1px 7px;margin-right:8px;border:1px solid var(--sagedeep);background:var(--sagedeep);color:var(--bg);white-space:nowrap}
+.cl .it .k.g{background:transparent;border-color:var(--muted);color:var(--muted)}
+.cl .it .k.w{background:transparent;border-color:var(--amberink);color:var(--amberink)}
+.cl .it .rf{display:block;margin-top:3px;font-size:13px;color:var(--muted)}
+.cl .it .rf a{font-family:var(--fm);font-size:12.5px;text-decoration:none;margin-right:6px}
+.cl .cl-foot{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.cl .cl-flag{font-family:var(--fm);font-size:12px;padding:3px 9px;border:1px solid var(--amberink);color:var(--amberink)}
+@media(max-width:640px){.cl{padding:20px 16px 16px}.cl ul.items{padding-left:0}}
+@media print{
+ body *{visibility:hidden!important}
+ #checklist,#checklist *{visibility:visible!important}
+ #checklist{position:absolute;left:0;top:0;width:100%;border:0;padding:0;background:#fff;color:#000}
+ #checklist .cl-btn,#checklist .cl-flag{display:none!important}
+ #checklist .it,#checklist h3,#checklist h4{color:#000!important}
+ #checklist .it .k{background:#fff!important;color:#000!important;border-color:#000!important}
+ #checklist a{color:#000!important}
+}
+
+.bb{background:var(--bg);border-left:3px solid var(--amber);padding:22px 28px 20px;margin:0 0 18px}
+.bb .bb-hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px}
+.bb h3{font-size:1.35rem}
+.bb .bb-flag{font-family:var(--fm);font-size:12px;padding:3px 9px;border:1px solid var(--amberink);color:var(--amberink)}
+.bb .bb-lead{margin:6px 0 0;color:var(--text);font-size:15px;max-width:66ch}
+.bb .trail{list-style:none;margin:16px 0 0;padding:0;font-size:13.5px;color:var(--muted)}
+.bb .trail li{margin:2px 0}
+.bb .trail b{font-weight:600;color:var(--text)}
+.bb .node{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.bb .node h4{font:600 17px/1.45 var(--fb);color:var(--ink);margin:0 0 6px}
+.bb .node .hint{margin:0 0 12px;font-size:14.5px;color:var(--text);max-width:68ch}
+.bb .node .hint.alarm{display:inline-block;font-weight:600;color:var(--ink);border-left:3px solid #9b3b23;padding:2px 0 2px 10px}
+.bb .opts{display:grid;gap:8px;margin-top:10px;max-width:760px}
+.bb .opt{font:500 15px/1.4 var(--fb);text-align:left;min-height:44px;padding:11px 16px;border:1.5px solid var(--sagedeep);background:transparent;color:var(--ink);cursor:pointer}
+.bb .opt:hover{background:var(--panel)}
+.bb .res{border-left:3px solid var(--sage);padding:2px 0 2px 16px}
+.bb .res p{margin:0 0 10px;color:var(--ink);max-width:68ch}
+.bb .res .lbl{font-family:var(--fm);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}
+.bb .res ul{list-style:none;margin:0;padding:0;font-size:14.5px}
+.bb .res li{margin:3px 0}
+.bb .res a{text-decoration:none}.bb .res a:hover{text-decoration:underline}
+.bb .res .nr{font-family:var(--fm);font-size:12.5px;margin-right:8px}
+.bb .nav2{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.bb .nav2 button{font:600 14px var(--fb);min-height:44px;padding:8px 16px;border:1.5px solid var(--line);background:transparent;color:var(--sagedeep);cursor:pointer}
+.bb .nav2 button:hover{border-color:var(--sagedeep)}
+@media(max-width:640px){.bb{padding:18px 16px 16px}}
 </style>
 </head>
 <body>
@@ -109,6 +203,17 @@ footer a{color:#C8D1A8}
 <form class="search" id="sf" role="search"><input id="q" type="search" placeholder="Zoek, bijvoorbeeld: geheimhouding" autocomplete="off" aria-label="Zoekterm"><button type="button" id="clear">Wissen</button></form>
 <p class="hint">Synoniemen tellen mee: geheimhouding vindt ook verschoningsrecht, klokkenluider vindt de Wbk. Elk woord moet voorkomen.</p>
 <div class="facts" id="facts"></div>
+</div></section>
+
+<section class="ing" id="ingangen"><div class="wrap">
+<div class="eyebrow"><span class="rule"></span>Waar sta je?</div>
+<h2>Begin bij je eigen vraag</h2>
+<p class="ing-lead">Kies wat bij je past. Per vraag een kort antwoord, met de onderwerpen hieronder waar het op steunt.</p>
+<div class="tabs" role="tablist" aria-label="Ingangen" id="ingtabs"></div>
+<p class="ing-key"><span><i></i>Volgt uit de onderwerpen of een gecontroleerde bron</span><span><i class="k2"></i>Praktijkadvies, geen wettelijke regel</span></p>
+<div id="bbwrap" hidden></div>
+<div id="clwrap" hidden></div>
+<div id="ingpanel" role="tabpanel"></div>
 </div></section>
 
 <div class="wrap main">
@@ -163,6 +268,9 @@ footer a{color:#C8D1A8}
 {"n":51,"r":8,"t":"Bewijsvermoeden bij benadeling van een klokkenluider","s":"Rechtspraak","reg":"HR 07-02-2025, ECLI:NL:HR:2025:190","st":"Uitspraak","c":"Gecontroleerd","u":"https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2025:190","k":"De werkgever kan het wettelijk vermoeden dat benadeling het gevolg is van de melding (art. 17eb Wbk) niet weerleggen door het alleen te ontzenuwen; hij moet het tegendeel aantonen. In deze zaak was dat gelukt en verwierp de Hoge Raad het beroep.","p":"Het vermoeden geldt bij benadeling tijdens en na de behandeling van een melding. Les: help de melder vastleggen wanneer en hoe er gemeld is; een goed dossier telt voor beide partijen (onderwerp 9).","m":"Uitleg van de bron","d":"2026-11-27","x":750574},
 {"n":52,"r":8,"t":"Onderzoek na anonieme meldingen","s":"Rechtspraak","reg":"Rb Den Haag 05-02-2025, ECLI:NL:RBDHA:2025:1113","st":"Uitspraak","c":"Gecontroleerd","u":"https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2025:1113","k":"De opdracht voor een extern feitenonderzoek naar aanleiding van twee anonieme brieven over ongewenst gedrag was rechtmatig, en de betrokkenen voldeden volgens de rechtbank voldoende aan hun zorgplicht.","p":"De betrokkene kon kennisnemen van de verwijten en van de opzet van het onderzoek, en haar zienswijze geven. Les: anonieme meldingen kunnen tot onderzoek leiden; de VP doet dat onderzoek niet zelf (onderwerp 21).","m":"Uitleg van de bron","d":"2026-11-27","x":33017}
 ]</script>
+<script type="application/json" id="vragen">[{"id": "M1", "g": "mee", "q": "Ik twijfel of het erg genoeg is. Mag ik dan toch bij de vertrouwenspersoon komen?", "a": "Ja. Je hoeft niet eerst zeker te weten of iets ongewenst gedrag is; dat uitzoeken kan juist in het gesprek. De wet noemt onder meer pesten, intimidatie, discriminatie, agressie en werkdruk, en die opsomming is niet uitputtend.", "n": [2, 44, 12], "b": "Volgt uit de onderwerpen"}, {"id": "M2", "g": "mee", "q": "Blijft wat ik vertel tussen ons?", "a": "In de regel wel: de vertrouwenspersoon vertelt niets door zonder jouw toestemming. Er zijn uitzonderingen, zoals een aangifteplicht bij bepaalde ernstige misdrijven, en de vertrouwenspersoon heeft geen verschoningsrecht bij de rechter.", "n": [22, 15, 18, 21], "b": "Volgt uit de onderwerpen"}, {"id": "M3", "g": "mee", "q": "Hoort mijn werkgever dat ik bij de vertrouwenspersoon ben geweest?", "a": "Niet van de vertrouwenspersoon. De opdrachtgever krijgt geen inzage in individuele kwesties en geeft er geen aanwijzingen over; in het jaarverslag staan alleen aantallen en soorten meldingen, zo dat niemand herleidbaar is.", "n": [45, 42, 22], "b": "Volgt uit de onderwerpen"}, {"id": "M4", "g": "mee", "q": "Wat gebeurt er in een eerste gesprek?", "a": "Je vertelt je verhaal en samen kijk je wat je wilt en welke wegen er zijn. Jij houdt de regie: de vertrouwenspersoon doet geen onderzoek, oordeelt niet over schuld en zet geen stappen zonder jouw instemming.", "n": [44, 45, 24], "b": "Praktijkuitleg"}, {"id": "M5", "g": "mee", "q": "Wat is het verschil tussen naar mijn leidinggevende of HR gaan en naar de vertrouwenspersoon?", "a": "Wat je leidinggevende of HR hoort, weet de werkgever, en die moet er vaak iets mee. Bij de vertrouwenspersoon blijft het vertrouwelijk en bepaal jij of en wanneer er een volgende stap komt.", "n": [36], "b": "Volgt uit de onderwerpen"}, {"id": "M6", "g": "mee", "q": "Is wat ik meemaak ongewenst gedrag, een integriteitsschending of een misstand?", "a": "Dat bepaalt welke route past. Een misstand raakt het maatschappelijk belang en stijgt uit boven een persoonlijk conflict; een integriteitsschending gaat tegen de eigen gedragscode in; ongewenst gedrag valt onder psychosociale arbeidsbelasting. Overlap komt voor, en dat uitzoeken kan in het gesprek.", "n": [37, 50, 7], "b": "Volgt uit de onderwerpen"}, {"id": "M7", "g": "mee", "q": "Kan ik anoniem blijven?", "a": "Bij de vertrouwenspersoon kun je vertrouwelijk praten zonder dat je naam verder gaat. Een formele klacht kan meestal niet anoniem, omdat wie beschuldigd wordt zich moet kunnen verweren. Of je anoniem een misstand kunt melden, hangt af van de meldregeling van je organisatie: de wet voorziet erin, maar de plicht voor werkgevers om het mogelijk te maken is nog niet uitgewerkt.", "n": [49, 11, 32, 52], "b": "Volgt uit de onderwerpen", "src": [["Huis voor Klokkenluiders, De meldregeling (september 2023)", "https://www.rijksoverheid.nl/binaries/rijksoverheid/documenten/brochures/2019/02/05/integriteit-in-de-praktijk---de-meldregeling/Integriteit+in+de+praktijk+-+De+meldregeling.pdf"]], "d": "27-11-2026"}, {"id": "M8", "g": "mee", "q": "Ben ik beschermd als ik iets meld en daarna word tegengewerkt?", "a": "Bij een melding van een vermoeden van een misstand ben je beschermd tegen benadeling, en dan moet de werkgever aantonen dat een nadelige maatregel niets met je melding te maken heeft. Ook na een klacht over discriminatie of (seksuele) intimidatie mag je niet worden benadeeld.", "n": [9, 51, 40], "b": "Volgt uit de onderwerpen"}, {"id": "M9", "g": "mee", "q": "Wat kan ik zelf vastleggen?", "a": "Schrijf voor jezelf op wat er gebeurde, wanneer, wie erbij waren en wat het met je deed, en bewaar berichten. Noteer ook wanneer en bij wie je iets hebt gemeld: wie na een melding wordt benadeeld, heeft baat bij een vastgelegd meldmoment.", "n": [9, 51], "b": "Praktijkuitleg"}, {"id": "M10", "g": "mee", "q": "Mijn werkgever doet niets met mijn melding. Wat kan ik nu doen?", "a": "Gaat het om een misstand, dan kun je advies vragen bij het Huis voor Klokkenluiders; bij discriminatie of (seksuele) intimidatie kun je het College voor de Rechten van de Mens om een oordeel vragen. De Arbeidsinspectie houdt toezicht op het beleid van de werkgever, maar lost geen individuele klacht op.", "n": [10, 38, 39, 47], "b": "Volgt uit de onderwerpen"}, {"id": "M11", "g": "mee", "q": "Ik word zelf beschuldigd. Kan ik ook bij een vertrouwenspersoon terecht?", "a": "Ja. Ook wie beschuldigd wordt, kan bij een vertrouwenspersoon terecht voor opvang en advies. Dezelfde vertrouwenspersoon begeleidt nooit zowel de melder als de beschuldigde in één kwestie.", "n": [23, 44], "b": "Volgt uit de onderwerpen"}, {"id": "M12", "g": "mee", "q": "Moet ik aangifte doen, en kan de vertrouwenspersoon dat voor mij doen?", "a": "Of je aangifte doet, beslis je zelf; de vertrouwenspersoon legt de mogelijkheden uit en kan je erbij ondersteunen, maar doet geen aangifte namens jou. Alleen bij bepaalde ernstige misdrijven geldt voor iedereen een eigen aangifteplicht.", "n": [24, 14, 18], "b": "Volgt uit de onderwerpen"}, {"id": "M13", "g": "mee", "q": "Het gedrag komt van een klant, patiënt of leerling, niet van een collega. Telt dat ook?", "a": "Ja. Ongewenst gedrag van mensen van buiten, zoals klanten of patiënten, hoort ook bij de psychosociale arbeidsbelasting waartegen de werkgever beleid moet voeren. Of je daarvoor bij de vertrouwenspersoon terechtkunt, staat in de regeling van je organisatie.", "n": [1, 2], "b": "Volgt uit gecontroleerde bron", "src": [["Inspectie SZW, BasisInspectieModule Intern ongewenst gedrag (2020)", "https://www.nlarbeidsinspectie.nl/binaries/nlarbeidsinspectie/documenten/richtlijnen/2020/09/01/bim-intern-ongewenst-gedrag/BIM+Intern+ongewenst+gedrag.pdf"]], "d": "27-11-2026"}, {"id": "M14", "g": "mee", "q": "Kan ik ook terecht als uitzendkracht, gedetacheerde, zzp'er of oud-medewerker?", "a": "Volgens het functieprofiel van de LVV is de vertrouwenspersoon er ook voor uitzendkrachten, gedetacheerden en zzp'ers, tot uiterlijk een jaar na uitdiensttreding. Wat precies geldt, staat in de regeling van de organisatie waar je werkt of werkte.", "n": [44], "b": "Volgt uit de onderwerpen"}, {"id": "O1", "g": "collega", "q": "Ik zie dat een collega wordt gepest of lastiggevallen. Wat kan ik doen?", "a": "Je kunt zelf bij de vertrouwenspersoon terecht om te overleggen, ook als het niet om jou gaat. Wijs je collega op de vertrouwenspersoon en laat de keuze om stappen te zetten zoveel mogelijk bij hem of haar.", "n": [44, 36], "b": "Praktijkuitleg"}, {"id": "O2", "g": "collega", "q": "Mag ik iets melden namens mijn collega?", "a": "Een vermoeden van een misstand mag je zelf melden, ook als je er niet zelf door geraakt wordt. Bij ongewenst gedrag dat een ander overkomt, is het meestal beter dat de betrokkene zelf de regie houdt; de vertrouwenspersoon kan met jou bespreken hoe je dat aanpakt.", "n": [37, 7, 44], "b": "Praktijkuitleg"}, {"id": "O3", "g": "collega", "q": "Ben ik beschermd als ik een collega help die iets meldt?", "a": "Wie een melder van een misstand bijstaat, is ook beschermd tegen benadeling. Dat geldt ook voor wie helpt bij een klacht over discriminatie of (seksuele) intimidatie.", "n": [9, 40], "b": "Volgt uit de onderwerpen"}, {"id": "W1", "g": "werkgever", "q": "Zijn we verplicht een vertrouwenspersoon aan te stellen?", "a": "Niet met zoveel woorden: de wet verplicht wel beleid tegen psychosociale arbeidsbelasting. De Arbeidsinspectie gaat bij dat beleid uit van een vertrouwenspersoon en heeft nog geen gelijkwaardig alternatief gezien. Het wetsvoorstel dat een vertrouwenspersoon verplicht bij in de regel 10 of meer werknemers ligt bij de Eerste Kamer, zonder ingangsdatum.", "n": [4, 1, 3, 5], "b": "Volgt uit gecontroleerde bron", "src": [["Aanhangsel Handelingen II 2020/21, nr. 1288", "https://zoek.officielebekendmakingen.nl/ah-tk-20202021-1288.html"], ["Kamerstuk 35592 nr. 6 (memorie van toelichting)", "https://zoek.officielebekendmakingen.nl/kst-35592-6.pdf"]], "d": "27-11-2026"}, {"id": "W2", "g": "werkgever", "q": "Moeten we ook een meldregeling en een gedragscode hebben?", "a": "Een meldregeling voor misstanden is verplicht vanaf in de regel 50 werknemers, en in de financiële sector ook daaronder. Een gedragscode is niet wettelijk verplicht, maar wel een gangbaar onderdeel van goed beleid.", "n": [7, 27, 6, 8], "b": "Volgt uit de onderwerpen"}, {"id": "W3", "g": "werkgever", "q": "Kiezen we een interne of een externe vertrouwenspersoon, of allebei?", "a": "Een interne vertrouwenspersoon kent de organisatie, maar kan klem komen te zitten tussen collega's, leidinggevenden en een eigen functie. Een externe staat daar los van; veel organisaties combineren een interne als laagdrempelig aanspreekpunt met een externe voor wie intern niet kan of durft.", "n": [46, 44, 4], "b": "Praktijkuitleg"}, {"id": "W4", "g": "werkgever", "q": "Wat mag ik als werkgever van de vertrouwenspersoon weten?", "a": "Geen namen en geen inhoud van gesprekken, tenzij de melder daar zelf voor kiest. Wel krijg je een jaarverslag met geanonimiseerde aantallen en signalen, en advies over risico's die de vertrouwenspersoon in de organisatie ziet.", "n": [45, 42, 44, 47], "b": "Volgt uit de onderwerpen"}, {"id": "W5", "g": "werkgever", "q": "Er komt een melding of klacht binnen. Wat moeten we doen?", "a": "Neem het serieus en handel zorgvuldig: laat de feiten onderzoeken met hoor en wederhoor voordat je conclusies trekt of maatregelen neemt. Rechters rekenden het werkgevers zwaar aan als signalen van de vertrouwenspersoon bleven liggen of als iemand zonder onderzoek werd aangepakt.", "n": [5, 49, 48, 52], "b": "Volgt uit de onderwerpen"}, {"id": "W6", "g": "werkgever", "q": "Wat moeten we op orde hebben naast een vertrouwenspersoon?", "a": "De risico's horen in de RI&E met maatregelen in het plan van aanpak, en medewerkers krijgen voorlichting. Gangbaar daarnaast zijn een gedragscode en een klachtenregeling met klachtencommissie; vanaf 50 werknemers is een meldregeling verplicht, en de OR stemt in met die regelingen.", "n": [3, 7, 20, 6], "b": "Praktijkuitleg"}, {"id": "W7", "g": "werkgever", "q": "Moet de ondernemingsraad instemmen?", "a": "Ja, met de regelingen eromheen: de OR heeft instemmingsrecht op arboregelingen en klachtenbehandeling, en op de meldprocedure voor misstanden. Het wetsvoorstel legt ook de instemming van de OR bij de vertrouwenspersoon zelf vast.", "n": [20, 8, 4], "b": "Volgt uit de onderwerpen"}, {"id": "W8", "g": "werkgever", "q": "Hoe zorgen we dat medewerkers de vertrouwenspersoon kennen en durven benaderen?", "a": "Vertel bij indiensttreding en regelmatig daarna wie de vertrouwenspersoon is en hoe die bereikbaar is, en laat de vertrouwenspersoon zich voorstellen. Uit onderzoek blijkt dat ruim een kwart van de werknemers niet weet of er een vertrouwenspersoon is.", "n": [3, 44], "b": "Praktijkuitleg"}, {"id": "W9", "g": "werkgever", "q": "Wat leggen we vast met een externe vertrouwenspersoon?", "a": "Dat de vertrouwenspersoon geen onderzoek doet, geen aanwijzingen krijgt over individuele kwesties, geen inzage geeft en niet als getuige wordt opgeroepen. Verder bereikbaarheid, voorlichting, het jaarverslag, de looptijd en wat er bij beëindiging met de dossiers gebeurt.", "n": [45, 41, 42], "b": "Volgt uit de onderwerpen"}, {"id": "W10", "g": "werkgever", "q": "Waar moet een goede vertrouwenspersoon aan voldoen?", "a": "Een erkende opleiding, kennis van de regels en onafhankelijkheid: geen rol in personeelsbeslissingen of onderzoek. Een registervertrouwenspersoon van de LVV houdt zich aan de beroepscode en hercertificeert elke vier jaar.", "n": [44, 25, 21, 46], "b": "Volgt uit de onderwerpen"}, {"id": "W11", "g": "werkgever", "q": "Mag een medewerker de interne vertrouwenspersoon weigeren?", "a": "Niemand kan worden verplicht met een bepaalde vertrouwenspersoon te praten. Vertrouwt iemand de interne vertrouwenspersoon niet, dan is een externe vertrouwenspersoon het gebruikelijke alternatief, desnoods eenmalig.", "n": [44, 46], "b": "Praktijkuitleg"}, {"id": "W12", "g": "werkgever", "q": "Wat bepaalt de kosten van een externe vertrouwenspersoon?", "a": "Vooral de omvang van de organisatie, de afgesproken beschikbaarheid, voorlichting en jaarverslag, en het aantal gesprekken. Vraag vooraf welke onderdelen vast zijn en welke per keer worden afgerekend.", "n": [], "b": "Praktijkuitleg"}, {"id": "R1", "g": "or", "q": "Waar heeft de OR instemmingsrecht op?", "a": "Op regelingen over arbeidsomstandigheden en klachtenbehandeling, en op de meldprocedure voor misstanden; klachtenregeling en gedragscode vallen daar meestal onder. Zonder OR of PVT moet meer dan de helft van de werknemers instemmen met de meldprocedure.", "n": [20, 8], "b": "Volgt uit de onderwerpen"}, {"id": "R2", "g": "or", "q": "Wat mag de OR van de vertrouwenspersoon verwachten?", "a": "Een jaarverslag met geanonimiseerde aantallen, soorten meldingen en signalen, zonder dat iemand herleidbaar is. Geen informatie over individuele kwesties.", "n": [42, 44], "b": "Volgt uit de onderwerpen"}, {"id": "R3", "g": "or", "q": "Hoe toetst de OR of het beleid tegen ongewenst gedrag deugt?", "a": "Vraag naar de RI&E en het plan van aanpak, de voorlichting, de regelingen en het jaarverslag van de vertrouwenspersoon. De Arbeidsinspectie heeft een zelfinspectie Werkdruk en ongewenst gedrag die ook een OR als houvast kan gebruiken.", "n": [3, 39, 42], "b": "Volgt uit gecontroleerde bron", "src": [["Nederlandse Arbeidsinspectie, Wat is werkdruk (2024)", "https://nlarbeidsinspectie.nl/binaries/nlarbeidsinspectie/documenten/brochures/2024/05/24/wat-is-werkdruk/wat-is-werkdruk-20240524.pdf"]], "d": "27-11-2026"}, {"id": "M15", "g": "mee", "q": "Wat is het verschil tussen een melding en een klacht?", "a": "Bij een melding vertel je wat er speelt, bijvoorbeeld aan de vertrouwenspersoon of je leidinggevende, en kies je samen de volgende stap. Een klacht is een formeel, schriftelijk verzoek aan de klachtencommissie om het gedrag te onderzoeken; dan hoort de beschuldigde ervan en volgt hoor en wederhoor.", "n": [36, 49, 44], "b": "Praktijkuitleg"}, {"id": "M16", "g": "mee", "q": "Wat gebeurt er als ik een klacht indien?", "a": "Dat staat in de klachtenregeling van je organisatie. Meestal kijkt de commissie eerst of de klacht in behandeling kan, hoort daarna jou, de beschuldigde en eventuele getuigen, in de regel apart, en adviseert de werkgever, die beslist. De vertrouwenspersoon kan je in dat traject begeleiden.", "n": [49, 44], "b": "Praktijkuitleg"}, {"id": "M17", "g": "mee", "q": "Het gedrag komt van mijn leidinggevende. Bij wie kan ik dan terecht?", "a": "Juist dan helpt een vertrouwenspersoon buiten de lijn: een externe, of een interne die niet onder die leidinggevende valt. De klachtenregeling en de routes buiten de organisatie, zoals het College voor de Rechten van de Mens of het Huis voor Klokkenluiders, staan ook dan open.", "n": [46, 44, 38, 10], "b": "Praktijkuitleg"}, {"id": "M18", "g": "mee", "q": "Hoe weet ik of de vertrouwenspersoon onafhankelijk is?", "a": "Een vertrouwenspersoon werkt zonder last of ruggespraak, heeft geen rol in beoordeling, sancties of onderzoek, en legt alleen geanonimiseerd verantwoording af. Twijfel je, vraag dan naar opleiding en registratie, of kies een externe vertrouwenspersoon.", "n": [44, 46, 25, 21], "b": "Volgt uit de onderwerpen"}, {"id": "M19", "g": "mee", "q": "Mijn werkgever heeft geen vertrouwenspersoon. Waar kan ik dan terecht?", "a": "Je kunt je werkgever vragen er een in te schakelen, desnoods eenmalig. Daarnaast kun je terecht bij je vakbond, bij het Huis voor Klokkenluiders als het om een misstand gaat, of bij het College voor de Rechten van de Mens bij discriminatie of (seksuele) intimidatie.", "n": [4, 1, 10, 38], "b": "Praktijkuitleg"}, {"id": "M20", "g": "mee", "q": "Ik word ziek van wat er gebeurt. Wat nu?", "a": "Meld je ziek als dat nodig is. Je werkgever mag bij een ziekmelding niet vragen naar de aard of oorzaak van je klachten; dat bespreek je met de bedrijfsarts, die geen medische gegevens aan je werkgever geeft. Ook zonder ziekmelding kun je met vragen over werk en gezondheid naar het open spreekuur van de bedrijfsarts.", "n": [1, 5], "b": "Volgt uit gecontroleerde bron", "src": [["Autoriteit Persoonsgegevens, Beleidsregels zieke werknemers (Staatscourant 2016, 21703)", "https://zoek.officielebekendmakingen.nl/stcrt-2016-21703.pdf"], ["Arboportaal, factsheet Bedrijfsarts", "https://www.arboportaal.nl/binaries/arboportaal/documenten/publicatie/2018/06/26/factsheet-bedrijfsarts/Factsheet+-+Bedrijfsarts.pdf"]], "d": "28-11-2026"}, {"id": "M21", "g": "mee", "q": "Telt gedrag via app, mail of sociale media ook?", "a": "Ja. Ongewenst gedrag hoeft niet op de werkvloer te gebeuren; ook berichten via app, mail of sociale media die met het werk te maken hebben, kunnen eronder vallen. Bewaar de berichten.", "n": [2, 13, 12], "b": "Praktijkuitleg"}, {"id": "W13", "g": "werkgever", "q": "Heeft een vertrouwenspersoon verschoningsrecht?", "a": "Nee, niet wettelijk: een rechter kan de vertrouwenspersoon als getuige horen. In een interne regeling of de opdracht kun je afspreken dat de organisatie de vertrouwenspersoon niet oproept en geen inzage vraagt, maar dat bindt de rechter niet.", "n": [15, 45, 22], "b": "Volgt uit de onderwerpen"}]</script>
+<script type="application/json" id="checklist-data">{"status": "Akkoord", "stand": "28-11-2026", "steps": [{"s": 1, "t": "Breng de risico's in kaart", "i": [{"p": "Neem psychosociale arbeidsbelasting op in de RI&E: pesten, intimidatie, discriminatie, agressie en werkdruk, ook als dat gedrag van klanten, patiënten of andere derden komt.", "k": "Verplicht", "n": [2, 3]}, {"p": "Leg de maatregelen vast in het plan van aanpak en voer beleid om die risico's te voorkomen of te beperken.", "k": "Verplicht", "n": [1, 3]}]}, {"s": 2, "t": "Leg vast welk gedrag je verwacht", "i": [{"p": "Stel een gedragscode op: wat wel en niet kan, en wat iemand kan doen bij ongewenst gedrag. Een wettelijke plicht is er niet.", "k": "Gangbaar", "n": [6]}]}, {"s": 3, "t": "Regel de routes voor melden en klagen", "i": [{"p": "Stel een interne meldprocedure voor misstanden op. Verplicht vanaf in de regel 50 werknemers; in de financiële sector ook daaronder.", "k": "Verplicht", "n": [7, 27]}, {"p": "Stel een klachtenregeling op met een klachtencommissie die klachten over ongewenst gedrag onderzoekt.", "k": "Gangbaar", "n": [20]}, {"p": "Noem de vertrouwenspersoon in de meldprocedure als adviseur in vertrouwen, niet als meldpunt dat over de opvolging beslist.", "k": "Gangbaar", "n": [34]}]}, {"s": 4, "t": "Kies de vertrouwenspersoon", "i": [{"p": "Kies intern, extern of beide. Een interne vertrouwenspersoon heeft geen rol in beoordeling, sancties of onderzoek.", "k": "Gangbaar", "n": [46, 44]}, {"p": "Let op opleiding, onafhankelijkheid en registratie bij de LVV.", "k": "Gangbaar", "n": [44, 25, 21]}, {"p": "Leg vast of de vertrouwenspersoon ook beschuldigden opvangt, en zo niet, naar wie wordt doorverwezen.", "k": "Gangbaar", "n": [23]}]}, {"s": 5, "t": "Leg de afspraken vast", "i": [{"p": "Taken: opvangen, begeleiden en adviseren van melders; voorlichting in de organisatie; advies aan de leiding.", "k": "Gangbaar", "n": [44]}, {"p": "Grenzen: geen onderzoek en geen bemiddeling, geen aanwijzingen over individuele kwesties, geen inzage in dossiers, en de vertrouwenspersoon niet als getuige oproepen.", "k": "Gangbaar", "n": [45]}, {"p": "Praktisch: bereikbaarheid, directe toegang tot de hoogste leiding, het jaarverslag, de looptijd en wat er bij beëindiging met de dossiers gebeurt.", "k": "Gangbaar", "n": [45, 41]}]}, {"s": 6, "t": "Regel de instemming", "i": [{"p": "Leg de klachtenregeling, de gedragscode en de arboregelingen voor ter instemming, als er een ondernemingsraad is.", "k": "Verplicht", "n": [20]}, {"p": "Laat de OR of PVT instemmen met de meldprocedure; zonder OR of PVT meer dan de helft van de werknemers.", "k": "Verplicht", "n": [8]}, {"p": "Het wetsvoorstel voor een verplichte vertrouwenspersoon legt ook de instemming van de OR bij de vertrouwenspersoon zelf vast.", "k": "Wetsvoorstel", "n": [4]}]}, {"s": 7, "t": "Maak het bekend en houd het levend", "i": [{"p": "Geef voorlichting over de risico's en de maatregelen. Wie de vertrouwenspersoon is en hoe die bereikbaar is, hoort daarbij.", "k": "Verplicht", "n": [3]}, {"p": "Herhaal dat jaarlijks en bij indiensttreding. Ruim een kwart van de werknemers weet niet of er een vertrouwenspersoon is.", "k": "Gangbaar", "n": [45]}, {"p": "Bespreek het jaarverslag en handel op de signalen. Komt er een melding of klacht, laat die dan onderzoeken met hoor en wederhoor.", "k": "Gangbaar", "n": [42, 47, 48, 49]}]}]}</script>
+<script type="application/json" id="beslisboom-data">{"status": "Akkoord", "nodes": {"start": {"k": "q", "t": "Wat speelt er?", "h": "Direct gevaar? Bel 112.", "o": [["Iemand doet mij of een collega iets aan: pesten, intimidatie, discriminatie of agressie", "a1"], ["Er gaat iets mis in de organisatie, zoals fraude, gevaar of het structureel overtreden van regels", "b1"], ["Iemand houdt zich niet aan de gedragscode of de integriteitsregels", "r_int"], ["Ik weet het niet precies", "r_twijfel"]], "n": [], "v": []}, "a1": {"k": "q", "t": "Is er ook sprake van een strafbaar feit, zoals geweld, bedreiging of een zedendelict?", "o": [["Ja", "r_politie"], ["Nee, of ik weet het niet", "a2"]], "n": [], "v": []}, "a2": {"k": "q", "t": "Gaat het om discriminatie, intimidatie of seksuele intimidatie?", "o": [["Ja", "r_discr"], ["Nee, om pesten of agressie", "r_pest"]], "n": [], "v": []}, "b1": {"k": "q", "t": "Raakt het meer dan je eigen situatie: is er een patroon, is het structureel, of is het zo ernstig dat het algemeen belang geraakt wordt?", "h": "Een persoonlijk conflict of één individuele kwestie is in de regel geen misstand in de zin van de wet.", "n": [50, 37], "o": [["Ja", "r_misstand"], ["Nee, of ik weet het niet", "r_twijfel"]], "v": []}, "r_politie": {"k": "r", "t": "Strafbaar feit: politie en aangifte", "h": "Of je aangifte doet, beslis je zelf. De vertrouwenspersoon legt de mogelijkheden uit en kan je ondersteunen, maar doet geen aangifte namens jou. Daarnaast blijft de route binnen je organisatie open: de vertrouwenspersoon en de klachtenregeling.", "n": [14, 24, 18], "v": ["M12"]}, "r_discr": {"k": "r", "t": "Discriminatie of (seksuele) intimidatie", "h": "Dit is wettelijk verboden. Je kunt bij de vertrouwenspersoon terecht en een klacht indienen volgens de klachtenregeling van je organisatie. Je kunt ook het College voor de Rechten van de Mens om een oordeel vragen; dat oordeel is niet bindend, maar wordt vaak opgevolgd. Wie klaagt, mag daarvoor niet worden benadeeld.", "n": [12, 13, 38, 40], "v": ["M8", "M10"]}, "r_pest": {"k": "r", "t": "Pesten of agressie", "h": "Je werkgever moet beleid voeren tegen pesten en agressie en heeft een zorgplicht. Je kunt bij de vertrouwenspersoon terecht en een klacht indienen volgens de klachtenregeling van je organisatie. De Arbeidsinspectie houdt toezicht op het beleid van de werkgever, maar lost geen individuele klacht op.", "n": [1, 2, 5, 39], "v": ["M5", "M10"]}, "r_misstand": {"k": "r", "t": "Vermoeden van een misstand", "h": "Je kunt melden via de interne meldprocedure van je organisatie, of direct extern bij een bevoegde instantie. Het Huis voor Klokkenluiders geeft advies. Vanaf het moment van melden ben je beschermd tegen benadeling. De vertrouwenspersoon kan je als adviseur in vertrouwen bijstaan. Werk je bij een bank? Een schending van de bankierseed kun je ook melden bij Stichting Tuchtrecht Banken.", "n": [7, 10, 9, 34, 31], "v": ["M8", "O3"], "src": [["Rijksoverheid, brochure Bescherming klokkenluiders (december 2023)", "https://www.wetbeschermingklokkenluiders.nl/binaries/wetbeschermingklokkenluiders/documenten/publicaties/2023/12/20/brochure-bescherming-klokkenluiders/Brochure+bescherming+klokkenluiders.pdf"]], "d": "28-11-2026"}, "r_int": {"k": "r", "t": "Integriteitsschending", "h": "Of iets een integriteitsschending is, volgt uit de gedragscode van je organisatie. Je kunt het melden bij je leidinggevende of via de meldregeling. Wil je anoniem blijven, dan kan een vertrouwenspersoon integriteit als tussenpersoon namens jou melden, zonder dat je naam bekend wordt.", "n": [37, 21, 34], "v": ["M7"]}, "r_twijfel": {"k": "r", "t": "Twijfel? Begin bij de vertrouwenspersoon", "h": "Je hoeft niet eerst zelf uit te zoeken welke route past; dat kan juist in het gesprek. Bij de vertrouwenspersoon blijft het vertrouwelijk en houd jij de regie.", "n": [37, 36, 44], "v": ["M1", "M6"]}}}</script>
 <script type="application/json" id="meta">{"revisie":19,"bijgewerkt":"2026-11-27","aantal":40,"publiek":[1,2,3,4,6,7,8,9,10,12,13,14,16,18,19,20,21,22,23,24,25,27,28,29,30,32,34,35,36,37,38,40,44,46,47,48,49,50,51,52]}</script>
 <script>
 {
@@ -279,6 +387,136 @@ document.getElementById('clear').addEventListener('click', () => { qEl.value = '
 render('');
 navEl.addEventListener('click', () => { if (qEl.value) { qEl.value = ''; render(''); } });
 listEl.addEventListener('click', e => { const a = e.target.closest('a[href^="#t"]'); if (a && qEl.value) { const id = a.getAttribute('href').slice(1); qEl.value = ''; render(''); requestAnimationFrame(() => { const el = document.getElementById(id); if (el) el.scrollIntoView(); }); e.preventDefault(); } });
+
+/* ingangen per rol: vragen in gewone taal, met verwijzing naar de onderwerpen */
+{
+const VR = JSON.parse(document.getElementById('vragen').textContent);
+const ING = [['mee','Ik maak iets mee'],['collega','Ik zie iets bij een collega'],['werkgever','Ik ben werkgever of HR'],['or','Ik zit in de OR']].filter(([k]) => VR.some(v => v.g === k));
+const tabsEl = document.getElementById('ingtabs'), panEl = document.getElementById('ingpanel');
+const byN = new Map(D.map(t => [t.n, t]));
+let cur = (location.hash.match(/^#ingang-(\w+)/) || [])[1];
+if (!ING.some(([k]) => k === cur)) cur = ING[0][0];
+function qa(v){
+ const refs = v.n.filter(n => byN.has(n));
+ return '<details class="qa'+(v.b === 'Praktijkuitleg' ? ' b2' : '')+'" id="v'+v.id+'"><summary>'+esc(v.q)+'</summary>'+
+ '<p class="a">'+esc(v.a)+'</p>'+''+
+ (refs.length ? '<ul class="refs"><li class="lbl">Meer hierover</li>'+refs.map(n => '<li><a href="#t'+n+'" data-ref="'+n+'"><span class="nr">'+pad(n)+'</span>'+esc(byN.get(n).t)+'</a></li>').join('')+'</ul>' : '')+
+ (v.src && v.src.length ? '<ul class="refs"><li class="lbl">Bron, gecontroleerd op '+esc(v.d)+'</li>'+v.src.filter(s => String(s[1]).startsWith('https://')).map(s => '<li class="src"><a href="'+esc(s[1])+'" target="_blank" rel="noopener">'+esc(s[0])+'</a></li>').join('')+'</ul>' : '')+'</details>';
+}
+function show(k){
+ cur = k;
+ tabsEl.innerHTML = ING.map(([key,label]) => '<button type="button" class="tab" role="tab" data-k="'+key+'" aria-selected="'+(key === k)+'">'+esc(label)+'<span class="tc">'+VR.filter(v => v.g === key).length+'</span></button>').join('');
+ panEl.innerHTML = VR.filter(v => v.g === k).map(qa).join('');
+}
+show(cur);
+tabsEl.addEventListener('click', e => { const b = e.target.closest('.tab'); if (b){ show(b.dataset.k); history.replaceState(null,'','#ingang-'+b.dataset.k); } });
+panEl.addEventListener('click', e => {
+ const a = e.target.closest('a[data-ref]'); if (!a) return;
+ e.preventDefault();
+ const q = document.getElementById('q'); if (q && q.value){ q.value = ''; render(''); }
+ requestAnimationFrame(() => { const el = document.getElementById('t'+a.dataset.ref); if (el){ const d = el.querySelector('details'); if (d) d.open = true; el.scrollIntoView(); history.replaceState(null,'','#t'+a.dataset.ref); } });
+});
+}
+
+/* checklist voor werkgevers, zichtbaar onder de ingang Ik ben werkgever of HR */
+{
+const CLD = document.getElementById('checklist-data');
+const wrap = document.getElementById('clwrap');
+if (CLD && wrap){
+ const CL = JSON.parse(CLD.textContent);
+ const byN2 = new Map(D.map(t => [t.n, t]));
+ const kc = k => k === 'Verplicht' ? '' : k === 'Wetsvoorstel' ? 'w' : 'g';
+ wrap.innerHTML = '<div class="cl" id="checklist"><div class="cl-hd"><h3>Checklist: vertrouwenspersoon aanstellen in zeven stappen</h3>'+
+  (CL.status !== 'Akkoord' ? '<span class="cl-flag">Concept</span>' : '<button type="button" class="cl-btn" id="clprint">Afdrukken</button>')+'</div>'+
+  '<p class="cl-lead">Per punt staat of het wettelijk verplicht is, gangbaar, of onderdeel van een wetsvoorstel, met de onderwerpen waar het op steunt.</p>'+
+  '<ol class="steps">'+CL.steps.map(s => '<li><h4>'+esc(s.t)+'</h4><ul class="items">'+s.i.map((it,j) => {
+    const refs = it.n.filter(n => byN2.has(n));
+    const id = 'cl'+s.s+'-'+j;
+    return '<li><input type="checkbox" id="'+id+'"><label class="it" for="'+id+'"><span class="k '+kc(it.k)+'">'+esc(it.k)+'</span>'+esc(it.p)+
+     (refs.length ? '<span class="rf">Onderwerp '+refs.map(n => '<a href="#t'+n+'" data-ref="'+n+'">'+pad(n)+'</a>').join('')+'</span>' : '')+'</label></li>';
+   }).join('')+'</ul></li>').join('')+'</ol>'+
+  '<p class="cl-foot">Kennisbank vertrouwenswerk, Raakpunt. Stand '+esc(CL.stand)+'. Algemene informatie, geen juridisch advies.</p></div>';
+ const tabs = document.getElementById('ingtabs');
+ const sync = () => { const sel = tabs.querySelector('.tab[aria-selected="true"]'); wrap.hidden = !(sel && sel.dataset.k === 'werkgever'); };
+ sync();
+ tabs.addEventListener('click', () => sync());
+ const pb = document.getElementById('clprint');
+ if (pb) pb.addEventListener('click', () => { try { window.print(); } catch(e) {} });
+ wrap.addEventListener('click', e => {
+  const a = e.target.closest('a[data-ref]'); if (!a) return;
+  e.preventDefault();
+  const q = document.getElementById('q'); if (q && q.value){ q.value = ''; render(''); }
+  requestAnimationFrame(() => { const el = document.getElementById('t'+a.dataset.ref); if (el){ const d = el.querySelector('details'); if (d) d.open = true; el.scrollIntoView(); history.replaceState(null,'','#t'+a.dataset.ref); } });
+ });
+ if (location.hash === '#checklist'){
+  const b = tabs.querySelector('.tab[data-k="werkgever"]'); if (b) b.click();
+  requestAnimationFrame(() => document.getElementById('checklist').scrollIntoView());
+ }
+}
+}
+
+/* beslisboom: welke route past bij mij, onder de ingangen mee en collega */
+{
+const BBD = document.getElementById('beslisboom-data');
+const bw = document.getElementById('bbwrap');
+if (BBD && bw){
+ const BB = JSON.parse(BBD.textContent);
+ const T = BB.nodes;
+ const byN3 = new Map(D.map(t => [t.n, t]));
+ const VRall = (() => { try { return JSON.parse(document.getElementById('vragen').textContent); } catch(e) { return []; } })();
+ const byV = new Map(VRall.map(v => [v.id, v]));
+ let path = [['start', null]];
+ function draw(){
+  const [cur] = path[path.length-1], x = T[cur];
+  let h = '<div class="bb" id="beslisboom"><div class="bb-hd"><h3>Welke route past bij mij?</h3>'+(BB.status !== 'Akkoord' ? '<span class="bb-flag">Concept</span>' : '')+'</div>'+
+   '<p class="bb-lead">Een paar vragen, dan zie je welke wegen er zijn. Er wordt niets opgeslagen of verstuurd.</p>';
+  if (path.length > 1) h += '<ul class="trail">'+path.slice(1).map(([k,a], i) => '<li>'+esc(T[path[i][0]].t)+' <b>'+esc(a)+'</b></li>').join('')+'</ul>';
+  h += '<div class="node">';
+  if (x.k === 'q'){
+   h += '<h4>'+esc(x.t)+'</h4>'+(x.h ? '<p class="hint'+(cur === 'start' ? ' alarm' : '')+'">'+esc(x.h)+'</p>' : '')+
+    '<div class="opts">'+x.o.map((o,i) => '<button type="button" class="opt" data-i="'+i+'">'+esc(o[0])+'</button>').join('')+'</div>';
+  } else {
+   const refs = x.n.filter(n => byN3.has(n)), vs = x.v.filter(v => byV.has(v));
+   h += '<div class="res"><h4>'+esc(x.t)+'</h4><p>'+esc(x.h)+'</p>'+
+    (vs.length ? '<div class="lbl">Zie ook</div><ul>'+vs.map(v => '<li><a href="#v'+v+'" data-v="'+v+'">'+esc(byV.get(v).q)+'</a></li>').join('')+'</ul>' : '')+
+    (refs.length ? '<div class="lbl">Meer in de onderwerpen</div><ul>'+refs.map(n => '<li><a href="#t'+n+'" data-ref="'+n+'"><span class="nr">'+pad(n)+'</span>'+esc(byN3.get(n).t)+'</a></li>').join('')+'</ul>' : '')+
+    (x.src && x.src.length ? '<div class="lbl">Bron, gecontroleerd op '+esc(x.d)+'</div><ul>'+x.src.filter(s => String(s[1]).startsWith('https://')).map(s => '<li><a href="'+esc(s[1])+'" target="_blank" rel="noopener">'+esc(s[0])+'</a></li>').join('')+'</ul>' : '')+
+    '</div>';
+  }
+  h += '</div>'+(path.length > 1 ? '<div class="nav2"><button type="button" data-act="back">Vorige vraag</button><button type="button" data-act="reset">Opnieuw beginnen</button></div>' : '')+'</div>';
+  bw.innerHTML = h;
+ }
+ draw();
+ const tabs = document.getElementById('ingtabs');
+ const sync = () => { const sel = tabs.querySelector('.tab[aria-selected="true"]'); bw.hidden = !(sel && (sel.dataset.k === 'mee' || sel.dataset.k === 'collega')); };
+ sync();
+ tabs.addEventListener('click', () => sync());
+ bw.addEventListener('click', e => {
+  const o = e.target.closest('.opt');
+  if (o){ const x = T[path[path.length-1][0]], opt = x.o[+o.dataset.i]; path.push([opt[1], opt[0]]); draw(); document.getElementById('beslisboom').scrollIntoView({block:'nearest'}); return; }
+  const b = e.target.closest('[data-act]');
+  if (b){ if (b.dataset.act === 'back') path.pop(); else path = [['start', null]]; draw(); return; }
+  const v = e.target.closest('a[data-v]');
+  if (v){
+   e.preventDefault();
+   const q = byV.get(v.dataset.v), sel = tabs.querySelector('.tab[aria-selected="true"]');
+   if (q && (!sel || sel.dataset.k !== q.g)){ const t = tabs.querySelector('.tab[data-k="'+q.g+'"]'); if (t) t.click(); }
+   requestAnimationFrame(() => { const el = document.getElementById('v'+v.dataset.v); if (el){ el.open = true; el.scrollIntoView(); } });
+   return;
+  }
+  const a = e.target.closest('a[data-ref]');
+  if (a){
+   e.preventDefault();
+   const qq = document.getElementById('q'); if (qq && qq.value){ qq.value = ''; render(''); }
+   requestAnimationFrame(() => { const el = document.getElementById('t'+a.dataset.ref); if (el){ const d = el.querySelector('details'); if (d) d.open = true; el.scrollIntoView(); history.replaceState(null,'','#t'+a.dataset.ref); } });
+  }
+ });
+ if (location.hash === '#beslisboom'){
+  const t = tabs.querySelector('.tab[data-k="mee"]'); if (t) t.click();
+  requestAnimationFrame(() => document.getElementById('beslisboom').scrollIntoView());
+ }
+}
+}
 }
 </script>
 
