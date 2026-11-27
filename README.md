@@ -25,7 +25,7 @@ Op `main` komt niets rechtstreeks; die tak kan alleen via een pull request veran
 
 ## Kennisbank vertrouwenswerk
 
-- `site/kennisbank-vertrouwenswerk.html` staat op https://www.raakpunt.com/kennisbank-vertrouwenswerk.html. De ingang is de dienstpagina extern vertrouwenspersoon (sectie "Wat het inhoudt"); de pagina staat bewust niet in het hoofdmenu.
+- `site/kennisbank-vertrouwenswerk.html` staat op https://www.raakpunt.com/kennisbank-vertrouwenswerk.html. Ingangen: een knop in het vlak extern vertrouwenspersoon op de homepage en een knop bovenaan de dienstpagina extern vertrouwenspersoon. De pagina staat bewust niet in het hoofdmenu.
 - Het bestand wordt gemaakt en bijgehouden in het project "Ik als vertrouwenspersoon". Pas de inhoud hier niet aan: bij een update wordt het in zijn geheel vervangen onder dezelfde naam.
 - Bijwerken: na een mail "ACTIE WEBSITE" het nieuwe bestand ongewijzigd over het oude zetten, als pull request met de boodschap "Kennisbank vertrouwenswerk bijgewerkt <datum>".
 
